@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CustomerLogin } from '../CustomerLogin';
+import { LoginServiceService } from './LoginService.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-login',
@@ -7,9 +10,18 @@ import { Component } from '@angular/core';
 })
 export class CustomerLoginComponent {
 
-  username: string='';
-  password: string='';
+  customerLogin:CustomerLogin=new CustomerLogin();
+  constructor(private loginServive:LoginServiceService,private router:Router) { }
   login(){
-
+    this.loginServive.validateLogin(this.customerLogin).subscribe(
+      data=>{
+        console.log(data);
+        this.customerLogin=data
+        if(this.customerLogin.message=="Login Success")
+          this.router.navigate(['customerHome'])
+        else
+          this.router.navigate([''])   
+      }
+    );
   }
 }

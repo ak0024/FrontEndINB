@@ -7,12 +7,12 @@
     <h1>Login</h1>
     
     <label for="username">Username:</label>
-    <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    <input type="text" id="username" [(ngModel)]="customerLogin.userName" name="username" required>
     <br><br>
     <label for="password">Password:</label>
-    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    <input type="password" id="password" [(ngModel)]="customerLogin.password" name="password" required>
     <br><br>
-    <p>The error message shows here</p>
+    <p [hidden]="customerLogin.userName==='' || customerLogin.password === '' " >{{customerLogin.message}}</p>
     <div >
     <button type="submit"  class="button">Login</button>
     <br><br>
