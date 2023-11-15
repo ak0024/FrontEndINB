@@ -32,7 +32,7 @@
 
 }
 
-input{
+input,select{
     height: 25px;
     border-radius: 10px;
 }
@@ -54,6 +54,7 @@ h1{
     float: left;
     width: 48%;
 }
+
 .pwd{
     float: right;
     width: 48%;
@@ -96,4 +97,10 @@ h1{
 .email{
     float: left;
     width: 48%;
+}
+.acctyp{
+  
+    width: 48%;
+    margin-left: 250px;
+    padding: 20px;
 }

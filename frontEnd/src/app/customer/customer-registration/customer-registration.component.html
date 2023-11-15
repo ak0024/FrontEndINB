@@ -9,10 +9,23 @@
   <label>LastName :  </label>
   <input type="text" name="LastName" size="50"><br><br>
     </div>
-  <div class="uname">
-  <label>UserName :  </label>
-  <input type="text" name="UserName"size="50"><br><br>
-</div>
+
+    <div class="acctyp">
+      <label>AccountType :  </label>
+       <select name="AccountType" id="AccountType" style="width: 250px;"><br><br>>
+        <option value="selecttype">-- SELECT TYPE --</option>
+        <option value="SAVINGS">SAVINGS</option>
+        <option value="CURRENT">CURRENT</option>
+       </select>
+    </div>
+  
+    <div class="uname">
+      <label>UserName :  </label>
+      <input type="text" name="UserName"size="50"><br><br>
+    </div>
+
+    
+
 <div class="pwd">
   <label>Password :  </label>&nbsp;
   <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required size="50"><br><br>
