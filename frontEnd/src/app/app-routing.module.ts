@@ -5,12 +5,14 @@ import { CustomerHomeComponent } from './customer/customer-home/customer-home.co
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
+import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
   {path:"customerHome",component:CustomerHomeComponent},
   {path:"adminlogin", component:AdminloginComponent},
   {path:"adminhome", component:AdminhomeComponent},
+  {path:"issueBankSlip",component:IssueBankSlipComponent},
   {path:"customerRegistration",component:CustomerRegistrationComponent}
 ];
 
