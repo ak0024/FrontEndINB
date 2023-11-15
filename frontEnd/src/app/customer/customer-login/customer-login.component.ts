@@ -18,7 +18,7 @@ export class CustomerLoginComponent {
         console.log(data);
         this.customerLogin=data
         if(this.customerLogin.message=="Login Success")
-          this.router.navigate(['customerHome'])
+          this.router.navigate(['adminhome'])
         else
           this.router.navigate([''])   
       }

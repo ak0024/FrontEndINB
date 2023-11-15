@@ -1,6 +1,6 @@
 export class Admin{
     userName: String="";
-    password: String="";
+    adminPassword: String="";
     passwordReachLimit: number=0;
     message:String="";
 
