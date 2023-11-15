@@ -7,13 +7,15 @@ import { CustomerLoginComponent } from './customer/customer-login/customer-login
 import { FormsModule } from '@angular/forms';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerLoginComponent,
     AdminloginComponent,
-    AdminhomeComponent
+    AdminhomeComponent,
+    ClaimBankslipComponent
   ],
   imports: [
     BrowserModule,
