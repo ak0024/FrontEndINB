@@ -14,7 +14,7 @@ export class Customer{
     email: string='';
     customerId: string='';
     customerStatus: string='';
-    passwordReachLimit: string='';
+    passwordReachLimit: number=0;
 
 
 }
