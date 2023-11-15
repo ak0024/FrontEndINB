@@ -1,1 +1,25 @@
-<p>claim-bankslip works!</p>
+
+<h1>CLAIM BANKSLIP</h1>
+<table border="1" id="Bankslip">
+    <tr>
+        <th>Chequeno</th>
+        <th>Accountid</th>
+        <th>Slipdate</th>
+        <th>Payer Accountid</th>
+        <th>Payer bank</th>
+        <th>chequedate</th>
+        <th>amount</th>
+        <th>action</th>
+    </tr>
+    <tr *ngFor="let Bankslip of  claimbankslip">
+        <td>{{Bankslip.chequeno}}</td>
+        <td>{{Bankslip.accountid.account_id}}</td>
+        <td>{{Bankslip.slipdate}}</td>
+        <td>{{Bankslip.payeraccountid.account_id}}</td>
+        <td>{{Bankslip.payerbank}}</td>
+        <td>{{Bankslip.chequedate}}</td>
+        <td>{{Bankslip.amount}}</td>
+        
+        <td><button>CLAIM</button></td>
+    </tr>
+</table>
