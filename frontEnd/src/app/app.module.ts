@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerLoginComponent } from './customer/customer-login/customer-login.component';
 import { FormsModule } from '@angular/forms';
+import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerLoginComponent
+    CustomerLoginComponent,
+    AdminloginComponent,
+    AdminhomeComponent,
+    ClaimBankslipComponent
   ],
   imports: [
     BrowserModule,
