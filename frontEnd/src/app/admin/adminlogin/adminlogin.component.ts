@@ -25,4 +25,7 @@ adminLogin(){
     }
   )
 }
+goToCustomer(){
+  this.router.navigate([''])
+}
 }

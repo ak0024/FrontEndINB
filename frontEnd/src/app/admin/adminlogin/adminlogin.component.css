@@ -8,26 +8,25 @@ p{
 a{
     color: aqua;
 }
-.login{
-   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
- 
-  top: 50%;
-  left: 70%;
-  width: 80%;
-  margin: auto;
-  /* position: absolute;
-  
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  */
-  padding: 20px;
-  text-align: center;
-  margin-top: 50px;
-  border-radius: 20px;
-  
+.adminLogin{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+   
+    top: 50%;
+    left: 70%;
+    width: 80%;
+    margin: auto;
+    /* position: absolute;
+    
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    */
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
 }
 .button{
     background-color: black;
