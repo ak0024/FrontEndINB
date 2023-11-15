@@ -3,16 +3,16 @@
 <div class="background-image"></div>
 <button type="submit"  (click)="goToCustomer()" class="button2"> Customer Login</button>
 <div class="adminlogin">
-<form (ngSubmit)="adminLogin()">
-    <h1>Login</h1>
+<form (ngSubmit)="adminLogin()">  
+    <h1>Admin Login</h1>
     
     <label for="username">Username:</label>
-    <input type="text" id="username" [(ngModel)]="admin.userName" name="username" required>
+    <input type="text" id="username" placeholder="username" [(ngModel)]="admin.userName" name="username" required>
     <br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" [(ngModel)]="admin.password" name="password" required>
+    <label for="password">Password:</label> 
+    <input type="password" id="password" placeholder="password" [(ngModel)]="admin.adminPassword" name="password" required>
     <br><br>
-    <p [hidden]="admin.userName==='' || admin.password === '' " >{{admin.message}}</p>
+    <p [hidden]="admin.userName==='' || admin.adminPassword === '' " >{{admin.message}}</p>
     <div >
     <button type="submit"  class="button">Login</button>
     <br><br>

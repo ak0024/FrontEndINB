@@ -18,7 +18,7 @@ adminLogin(){
       console.log(data);
       this.admin=data;
       if(this.admin.message=="Login Success")
-          this.router.navigate(['adminHome'])
+          this.router.navigate(['adminhome'])
         else
           this.router.navigate([''])   
       

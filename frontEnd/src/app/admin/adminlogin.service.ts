@@ -12,7 +12,7 @@ export class AdminloginService {
 
   validateAdminLogin(admin: Admin):Observable<Admin>{
     console.log(admin);
-    return this.httpClient.post<Admin>("http://localhost:8082/adminapi/adminLogin",admin);
+    return this.httpClient.post<Admin>("http://localhost:8082/adminapi/adminlogin",admin);
     
 
    }

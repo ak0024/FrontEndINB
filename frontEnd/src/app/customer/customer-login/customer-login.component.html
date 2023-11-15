@@ -1,16 +1,24 @@
 
 
 <div class="background-image"></div>
+<<<<<<< HEAD
+<div class="main-header">
+  <br>
+<button type="submit"  class="button2 "> Admin Login</button><br>
+<br>
+</div>
+=======
 <button type="submit"  (click)="goToAdmin()" class="button2"> Admin Login</button>
+>>>>>>> 7682ebf34d87f2cc61b737458ceea3df3fccda54
 <div class="login">
 <form (ngSubmit)="login()">
     <h1>Login</h1>
     
     <label for="username">Username:</label>
-    <input type="text" id="username" [(ngModel)]="customerLogin.userName" name="username" required>
+    <input type="text" id="username" placeholder="username" [(ngModel)]="customerLogin.userName" name="username" required>
     <br><br>
     <label for="password">Password:</label>
-    <input type="password" id="password" [(ngModel)]="customerLogin.password" name="password" required>
+    <input type="password" id="password" placeholder="password" [(ngModel)]="customerLogin.password" name="password" required>
     <br><br>
     <p [hidden]="customerLogin.userName==='' || customerLogin.password === '' " >{{customerLogin.message}}</p>
     <div >
