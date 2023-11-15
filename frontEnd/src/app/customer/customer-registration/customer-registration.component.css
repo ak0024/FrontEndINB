@@ -1,0 +1,106 @@
+.my-button {
+    background-color: rgb(25, 0, 255);
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 500px;
+    
+    
+  }
+.my-button:hover, .my-button:active{
+    background-color: white;
+    color: black;
+  }
+
+.registration{
+    text-align: center;
+    background-color: (0,0,0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width: auto; 
+    padding: 30px;
+    margin: auto;
+    font-family:'Lora', serif;
+    font-weight: bold;
+    font-size: larger;
+    background-size: cover; 
+    box-sizing: border-box;
+    
+
+}
+
+input,select{
+    height: 25px;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: inherit;
+}
+.fname{
+    float: left;
+    width: 48%;
+}
+.lname{
+    float: right;
+    width: 48%;
+}
+.uname{
+    float: left;
+    width: 48%;
+}
+
+.pwd{
+    float: right;
+    width: 48%;
+}
+
+.add1{
+    float: left;
+    width: 48%;
+}
+.add2{
+    size: 50;
+    float: right;
+    width: 48%;
+}
+.add3{
+    float: left;
+    width: 48%;
+}
+
+.city{
+    float: right;
+    width: 48%;
+}
+.State{
+    float: left;
+    width: 48%;
+}
+.zip{
+    float: right;
+    width: 48%;
+}
+.phone{
+    float: left;
+    width: 48%;
+}
+.cell{
+    float: right;
+    width: 48%;
+}
+.email{
+    float: left;
+    width: 48%;
+}
+.acctyp{
+  
+    width: 48%;
+    margin-left: 250px;
+    padding: 20px;
+}
