@@ -24,4 +24,7 @@ export class CustomerLoginComponent {
       }
     );
   }
+  goToAdmin(){
+    this .router.navigate(['adminlogin'])
+  }
 }
