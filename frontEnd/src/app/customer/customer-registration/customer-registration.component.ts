@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/bankslip/account';
-import { CustomerRegistrationServiceService } from './Customer-registration-Service.service';
+
 import { Observable, of } from 'rxjs';
 import { DataServiceService } from './data-service.service';
+import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-registration-Service.service';
+import { Account } from 'src/app/Domain/account';
 
 @Component({
   selector: 'app-customer-registration',
