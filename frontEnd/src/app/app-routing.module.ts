@@ -7,6 +7,7 @@ import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
+import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"adminlogin", component:AdminloginComponent},
   {path:"adminhome", component:AdminhomeComponent},
   {path:"issueBankSlip",component:IssueBankSlipComponent},
-  {path:"customerRegistration",component:CustomerRegistrationComponent}
+  {path:"customerRegistration",component:CustomerRegistrationComponent},
+  {path:"forgotAdminPassword", component:ForgotpasswordComponent}
 ];
 
 @NgModule({
