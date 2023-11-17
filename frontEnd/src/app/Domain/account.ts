@@ -1,4 +1,4 @@
-import { Customer } from "../customer/customer";
+import { Customer } from "./customer";
 
 export class Account{
      opening_date : any=null;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { BankSlip } from '../BankSlip';
-import { BankslipServiceService } from '../bankslip-service.service';
+import { BankSlip } from '../../Domain/BankSlip';
+import { BankslipServiceService } from '../../Service/bankslip-service.service';
 import { Router } from '@angular/router';
 
 @Component({
