@@ -3,7 +3,7 @@ import { OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { BankslipServiceService } from 'src/app/Service/bankslip-service.service';
-import { BankSlip } from 'src/app/domain/BankSlip';
+import { BankSlip } from 'src/app/Domain/BankSlip';
 
 @Component({
   selector: 'app-claim-bankslip',

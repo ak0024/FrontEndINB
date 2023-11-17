@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AdminloginService } from '../../Service/adminlogin.service';
 import { Router } from '@angular/router';
-import { Admin } from 'src/app/domain/admin';
+import { Admin } from 'src/app/Domain/admin';
 
 @Component({
   selector: 'app-adminlogin',

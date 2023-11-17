@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Admin } from '../../domain/admin';
-import { AdminloginService } from '../../services/adminlogin.service';
+import { Admin } from '../../Domain/admin';
+
 import { Router } from '@angular/router';
+import { AdminloginService } from 'src/app/Service/adminlogin.service';
 
 @Component({
   selector: 'app-forgotpassword',

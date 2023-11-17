@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { Observable } from 'rxjs';
-import { BankSlip } from '../domain/BankSlip';
+import { BankSlip } from '../Domain/BankSlip';
 @Injectable({
   providedIn: 'root'
 })
