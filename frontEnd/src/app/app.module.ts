@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip.component';
+import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip
     CustomerLoginComponent,
     AdminloginComponent,
     AdminhomeComponent,
-    ClaimBankslipComponent
+    ClaimBankslipComponent,
+    CustomerRegistrationComponent
   ],
   imports: [
     BrowserModule,

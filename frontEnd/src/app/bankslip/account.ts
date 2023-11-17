@@ -1,4 +1,4 @@
-import { Customer } from "./claim-bankslip/customer";
+import { Customer } from "../customer/customer";
 
 export class Account{
      opening_date : any=null;
