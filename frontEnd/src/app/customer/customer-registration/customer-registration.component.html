@@ -1,125 +1,89 @@
+<div class="head">
+  <h1>CUSTOMER REGISTRATION</h1>
+</div>
+<form (ngSubmit)="register()">
 <h1 >Customer Registration</h1>
 <form (ngSubmit)="register()" >
   <div class="registration">
-    <div class="fname">
-  <label>FirstName :  </label>
-  <input type="text" name="FirstName" [(ngModel)]="account.customer_id.firstName" size="50"><br><br>
-     </div>
-     <div class="lname">
-  <label>LastName :  </label>
-  <input type="text" name="LastName" [(ngModel)]="account.customer_id.lastName" size="50"><br><br>
-    </div>
 
-    <div class="acctyp">
-      <label>AccountType :  </label>
-       <select name="AccountType" id="AccountType" [(ngModel)]="account.account_type" style="width: 250px;"><br><br>>
-        <option value="selecttype">-- SELECT TYPE --</option>
-        <option value="SAVINGS">SAVINGS</option>
-        <option value="CURRENT">CURRENT</option>
-       </select>
-    </div>
-  
-    <div class="uname">
-      <label>UserName :  </label>
-      <input type="text" name="UserName" [(ngModel)]="account.customer_id.userName"size="50"><br><br>
-    </div>
+    <label>FirstName : </label>
+    <input type="text" name="FirstName" [(ngModel)]="account.customer_id.firstName" size="50"><br><br>
 
-    
+    <label>LastName : </label>
+    <input type="text" name="LastName" [(ngModel)]="account.customer_id.lastName" size="50"><br><br>
 
-<div class="pwd">
-  <label>Password :  </label>&nbsp;&nbsp;
-  <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required [(ngModel)]="account.customer_id.password" size="40"><br><br>
-</div>
 
-<div class="cpwd">
-  <label>Confirm-Password :  </label>&nbsp;
-  <input type="password" id="Confirm-password" name="Confirm-password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required [(ngModel)]="account.customer_id.password" size="40"><br><br>
-</div>
 
-<div class="add1">
-  <label>Address line 1:</label>
-  <input type="text" name="LastName"  [(ngModel)]="account.customer_id.addressLine1" size="50"><br><br>
-</div>
+    <label>Address line 1:</label>
+    <input type="text" name="LastName" [(ngModel)]="account.customer_id.addressLine1" size="50"><br><br>
+ 
 
-<div class="add2">
   <label>Address line 2:</label>
   <input type="text" name="addressline 2" [(ngModel)]="account.customer_id.addressLine2" size="50"><br><br>
-</div>
+  
 
-<div class="add3">
   <label>Address line 3:</label>
-  <input type="text" name="addressline 3"  [(ngModel)]="account.customer_id.addressLine3" size="50"><br><br>
-</div>
+  <input type="text" name="addressline 3" [(ngModel)]="account.customer_id.addressLine3" size="50"><br>
+  
 
-<div class="city">
-  <label>City :  </label>&nbsp;
-  <input type="text" name="city" [(ngModel)] ="account.customer_id.city">
-</div>
+<br>
+  <label>State : </label>&nbsp;&nbsp;
+  <select (change)="onStateChange($event)" [(ngModel)]="account.customer_id.state">
+    <option value="">Select State</option>
+    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+  </select><br><br>
 
-<div class="State">
-  <label>State :  </label>&nbsp;&nbsp;
-  <select name="text" id="State" [(ngModel)]="account.customer_id.state"><br><br>
-    <option value="">Select state</option>
-    <option value="AN">Andaman and Nicobar Islands</option>
-    <option value="AP">Andhra Pradesh</option>
-    <option value="AR">Arunachal Pradesh</option>
-    <option value="AS">Assam</option>
-    <option value="BR">Bihar</option>
-    <option value="CH">Chandigarh</option>
-    <option value="CT">Chhattisgarh</option>
-    <option value="DN">Dadra and Nagar Haveli</option>
-    <option value="DD">Daman and Diu</option>
-    <option value="DL">Delhi</option>
-    <option value="GA">Goa</option>
-    <option value="GJ">Gujarat</option>
-    <option value="HR">Haryana</option>
-    <option value="HP">Himachal Pradesh</option>
-    <option value="JK">Jammu and Kashmir</option>
-    <option value="JH">Jharkhand</option>
-    <option value="KA">Karnataka</option>
-    <option value="KL">Kerala</option>
-    <option value="LA">Ladakh</option>
-    <option value="LD">Lakshadweep</option>
-    <option value="MP">Madhya Pradesh</option>
-    <option value="MH">Maharashtra</option>
-    <option value="MN">Manipur</option>
-    <option value="ML">Meghalaya</option>
-    <option value="MZ">Mizoram</option>
-    <option value="NL">Nagaland</option>
-    <option value="OR">Odisha</option>
-    <option value="PY">Puducherry</option>
-    <option value="PB">Punjab</option>
-    <option value="RJ">Rajasthan</option>
-    <option value="SK">Sikkim</option>
-    <option value="TN">Tamil Nadu</option>
-    <option value="TG">Telangana</option>
-    <option value="TR">Tripura</option>
-    <option value="UP">Uttar Pradesh</option>
-    <option value="UT">Uttarakhand</option>
-    <option value="WB">West Bengal</option>
-</select>
-</div>
+  <label *ngIf="cities.length > 0">city : </label>&nbsp;&nbsp;
+  <select *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city">
+    <option value="">Select City</option>
+    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+  </select><br><br>
+ 
 
-<div class="zip">
-  <label>Zip :  </label>&nbsp;&nbsp;
-  <input type="text" name="Zip"  pattern="\d{6}"   maxlength="6" placeholder="6-digit" required [(ngModel)]="account.customer_id.zip"><br><br>
-</div>
+  <label>Zip : </label>&nbsp;&nbsp;
+  <input type="text" name="Zip" pattern="\d{6}" maxlength="6" placeholder="6-digit" required
+    [(ngModel)]="account.customer_id.zip"><br><br>
 
-<div class="phone">
-  <label for="phone">Phone :  </label>&nbsp;
-  <input type="number" id="phone" name="phone"  [(ngModel)]="account.customer_id.phone"><br><br>
-</div>
 
-{{account.customer_id.phone}}
+  <label for="phone">Phone : </label>&nbsp;
+  <input type="number" id="phone" name="phone" [(ngModel)]="account.customer_id.phone"><br><br>
+
+
+  
   <div class="cell">
-  <label for="cell">Cell :  </label>&nbsp;&nbsp;
-  <input type="tel" id="cell" name="cell"maxlength="10" [(ngModel)]="account.customer_id.cell"><br><br>
-</div>
+    <label for="cell">Cell : </label>&nbsp;&nbsp;
+    <input type="tel" id="cell" name="cell" maxlength="10" [(ngModel)]="account.customer_id.cell"><br><br>
+  </div>
   <div class="email">
-  <label>Email :  </label>&nbsp;&nbsp;
-  <input type="email" name="email" [(ngModel)]="account.customer_id.email"><br><br>
-</div>
+    <label>Email : </label>&nbsp;&nbsp;
+    <input type="email" name="email" [(ngModel)]="account.customer_id.email"><br><br>
 
-  <button type="submit" class="my-button" >NEXT</button>
+    <label>AccountType : </label>
+    <select name="AccountType" id="AccountType" [(ngModel)]="account.account_type" style="width: 250px;"><br><br>
+      <option value="selecttype">-- SELECT TYPE --</option>
+      <option value="SAVINGS">SAVINGS</option>
+      <option value="CURRENT">CURRENT</option>
+    </select>
+
+    <br><br>
+
+    <label>UserName : </label>
+    <input type="text" name="UserName" [(ngModel)]="account.customer_id.userName" size="50"><br><br>
+
+
+    <label>Password : </label>&nbsp;&nbsp;
+    <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
+      [(ngModel)]="account.customer_id.password" size="40"><br><br>
+
+
+
+    <label>Confirm-Password : </label>&nbsp;
+    <input type="password" id="Confirm-password" name="Confirm-password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
+      [(ngModel)]="account.customer_id.confirmPassword" size="40"><br><br>
+
+
+
+    <button type="submit" class="my-button">submit</button>
+  </div>
 </div>
 </form>

@@ -19,5 +19,6 @@ export class Account{
 	 fdRateOfInterest:number=0;
 	 startDate:any=null;
 	 endDate:any=null;
+	
     
 }

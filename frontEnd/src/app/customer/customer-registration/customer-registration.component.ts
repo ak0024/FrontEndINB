@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CustomerRegistrationServiceService } from '../../Service/Customer-registration-Service.service';
+
+import { DataServiceService } from './data-service.service';
+import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-registration-Service.service';
 import { Account } from 'src/app/Domain/account';
-
-
 
 @Component({
   selector: 'app-customer-registration',
@@ -12,11 +12,40 @@ import { Account } from 'src/app/Domain/account';
 })
 export class CustomerRegistrationComponent implements OnInit {
 
-  constructor(private customerRegistrationService:CustomerRegistrationServiceService) { }
+  states: string[] = [];
+  cities: string[] =[];
+  selectedState: string ="";
+ 
+ 
+
+  constructor(private customerRegistrationService:CustomerRegistrationServiceService,private dataService: DataServiceService) { }
 
   ngOnInit() {
+    this.getStates();
   }
   account:Account= new Account()
+
+
+  getStates() {
+    this.dataService.getStates().subscribe((states: string[]) => {
+      this.states = states;
+    });
+  }
+
+  
+
+  getCitiesByState(selectedState: string) {
+    this.dataService.getCitiesByState(selectedState).subscribe((cities: string[]) => {
+      this.cities = cities;
+    });
+  }
+
+  onStateChange(event: Event) {
+    const selectedState = (event.target as HTMLSelectElement).value;
+    // Now, use selectedState as needed...
+    this.getCitiesByState(selectedState);
+  }
+  
 
   register(){
     console.log(this.account)

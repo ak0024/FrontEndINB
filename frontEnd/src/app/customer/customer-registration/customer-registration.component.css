@@ -6,7 +6,7 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    margin-left: 500px;
+    margin-left: 600px;
     
     
   }
@@ -16,18 +16,26 @@
   }
 
 .registration{
-    text-align: center;
-    background-color: (0,0,0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
-    width: auto; 
-    padding: 30px;
-    margin: auto;
-    font-family:'Lora', serif;
     font-weight: bold;
-    font-size: larger;
-    background-size: cover; 
-    box-sizing: border-box;
+   
+    top: 50%;
+    left: 70%;
+    width: 80%;
+    margin: auto;
+    /* position: absolute;
+    
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    */
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
+    font-family: inherit;
+    
     
 
 }
@@ -35,75 +43,14 @@
 input,select{
     height: 25px;
     border-radius: 10px;
+    border-color: black;
 }
-h1{
+
+
+.head{
     text-align: center;
     background-color:#088395;
     color: white;
     font-family: inherit;
 }
-.fname{
-    float: left;
-    width: 48%;
-}
-.lname{
-    float: right;
-    width: 48%;
-}
-.uname{
-    float: left;
-    width: 48%;
-}
 
-.pwd{
-    float: right;
-    width: 45%;
-}
-
-.cpwd{
-    float: right;
-    width: 48%;
-}
-
-.add1{
-    float: left;
-    width: 48%;
-}
-.add2{ 
-    float: right;
-    width: 48%;
-}
-.add3{
-    float: left;
-    width: 48%;
-}
-
-.city{
-    float: right;
-    width: 48%;
-}
-.State{
-    float: left;
-    width: 48%;
-}
-.zip{
-    float: right;
-    width: 48%;
-}
-.phone{
-    float: left;
-    width: 48%;
-}
-.cell{
-    float: right;
-    width: 48%;
-}
-.email{
-    float: left;
-    width: 48%;
-}
-.acctyp{
-    width: 48%;
-    margin-left: 250px;
-    padding: 20px;
-}
