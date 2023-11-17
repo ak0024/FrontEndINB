@@ -54,7 +54,9 @@ export class CustomerRegistrationComponent implements OnInit {
       data=>{
         console.log(data)
         if(data[0]==='success')
-            this.router.navigate([''])
+        this.router.navigate(['registrationWaiting']);
+      else
+      this.router.navigate(['customerRegistration']);
         this.account=new Account()
       }
     )

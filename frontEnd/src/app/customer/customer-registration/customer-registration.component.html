@@ -13,7 +13,7 @@
 
 
     <label>Address line 1:</label>
-    <input type="text" name="LastName" [(ngModel)]="account.customer_id.addressLine1" size="40"><br><br>
+    <input type="text" name="addressLine1" [(ngModel)]="account.customer_id.addressLine1" size="40"><br><br>
  
 
   <label>Address line 2:</label>
@@ -26,13 +26,13 @@
 
 <br>
   <label>State : </label>&nbsp;&nbsp;
-  <select (change)="onStateChange($event)" [(ngModel)]="account.customer_id.state">
+  <select (change)="onStateChange($event)" [(ngModel)]="account.customer_id.state" name="state">
     <option value="">Select State</option>
     <option *ngFor="let state of states" [value]="state">{{ state }}</option>
   </select><br><br>
 
   <label *ngIf="cities.length > 0">city : </label>&nbsp;&nbsp;
-  <select *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city">
+  <select *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city" name="city">
     <option value="">Select City</option>
     <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
   </select><br><br>
@@ -81,7 +81,7 @@
 
 
 
-    <button type="submit" class="my-button" (click)="validateAccount()">submit</button>
+    <button type="submit" class="my-button" >submit</button>
   </div>
 </div>
 </form>
