@@ -38,24 +38,22 @@
 
 <div class="add1">
   <label>Address line 1:</label>
-  <input type="text" name="LastName" size="50"><br><br>
+  <input type="text" name="LastName"  [(ngModel)]="account.customer_id.addressLine1" size="50"><br><br>
 </div>
 
 <div class="add2">
   <label>Address line 2:</label>
-  <input type="text" name="addressline 2" size="50"><br><br>
+  <input type="text" name="addressline 2" [(ngModel)]="account.customer_id.addressLine2" size="50"><br><br>
 </div>
 
 <div class="add3">
   <label>Address line 3:</label>
-  <input type="text" name="addressline 3" size="50"><br><br>
+  <input type="text" name="addressline 3"  [(ngModel)]="account.customer_id.addressLine3" size="50"><br><br>
 </div>
 
 <div class="city">
   <label>City :  </label>&nbsp;
-  <select name="text" id="City" [(ngModel)]="account.customer_id.city"><br><br>
-    <option value=""></option>
-  </select>
+  <input type="text" name="city" [(ngModel)] ="account.customer_id.city">
 </div>
 
 <div class="State">
@@ -109,11 +107,13 @@
 
 <div class="phone">
   <label for="phone">Phone :  </label>&nbsp;
-  <input type="tel" id="phone" pattern="\d{4}-\d{4}" maxlength="9" placeholder="9999-9999" [(ngModel)]="account.customer_id.phone"><br><br>
+  <input type="number" id="phone" name="phone"  [(ngModel)]="account.customer_id.phone"><br><br>
 </div>
+
+{{account.customer_id.phone}}
   <div class="cell">
   <label for="cell">Cell :  </label>&nbsp;&nbsp;
-  <input type="tel" id="cell" name="cell" pattern="\d{5}-\d{5}" maxlength="11"  placeholder="99999-99999" [(ngModel)]="account.customer_id.cell"><br><br>
+  <input type="tel" id="cell" name="cell"maxlength="10" [(ngModel)]="account.customer_id.cell"><br><br>
 </div>
   <div class="email">
   <label>Email :  </label>&nbsp;&nbsp;

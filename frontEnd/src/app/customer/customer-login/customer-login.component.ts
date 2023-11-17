@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CustomerLogin } from '../CustomerLogin';
-import { LoginServiceService } from './LoginService.service';
+
+import { LoginServiceService } from '../../Service/LoginService.service';
 import { Router } from '@angular/router';
+import { CustomerLogin } from 'src/app/domain/CustomerLogin';
 
 @Component({
   selector: 'app-customer-login',

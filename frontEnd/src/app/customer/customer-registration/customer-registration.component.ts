@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/bankslip/account';
-import { Customer } from '../customer';
-import { CustomerRegistrationServiceService } from './Customer-registration-Service.service';
+import { Account } from 'src/app/Domain/account';
+import { Customer } from '../../Domain/customer';
+import { CustomerRegistrationServiceService } from '../../Service/Customer-registration-Service.service';
 
 @Component({
   selector: 'app-customer-registration',

@@ -1,5 +1,6 @@
 import { Account } from "./account";
 
+
 export class BankSlip{
     slipdate: string="";
     accountid:Account=new Account();

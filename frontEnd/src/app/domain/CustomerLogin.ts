@@ -1,5 +1,6 @@
 import { Customer } from "./customer";
 
+
 export class CustomerLogin {
 
     userName:string="";
