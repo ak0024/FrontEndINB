@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { DataServiceService } from './data-service.service';
+import { DataServiceService } from '../../Service/data-service.service';
 import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-registration-Service.service';
 import { Account } from 'src/app/Domain/account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-registration',
@@ -18,7 +19,7 @@ export class CustomerRegistrationComponent implements OnInit {
  
  
 
-  constructor(private customerRegistrationService:CustomerRegistrationServiceService,private dataService: DataServiceService) { }
+  constructor(private customerRegistrationService:CustomerRegistrationServiceService,private dataService: DataServiceService,private router:Router) { }
 
   ngOnInit() {
     this.getStates();
@@ -56,6 +57,9 @@ export class CustomerRegistrationComponent implements OnInit {
       }
     )
   }
+  validateAccount(){
+    this.router.navigate(['registrationWaiting']);
+      }
 
 
  

@@ -44,7 +44,7 @@
 
 
   <label for="phone">Phone : </label>&nbsp;
-  <input type="number" id="phone" name="phone" [(ngModel)]="account.customer_id.phone"><br><br>
+  <input type="number" id="phone" name="phone" maxlength="10" [(ngModel)]="account.customer_id.phone"><br><br>
 
 
   
@@ -81,7 +81,7 @@
 
 
 
-    <button type="submit" class="my-button">submit</button>
+    <button type="submit" class="my-button" (click)="validateAccount()">submit</button>
   </div>
 </div>
 </form>
