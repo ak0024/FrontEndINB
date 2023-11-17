@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/bankslip/account';
 import { Customer } from '../customer';
+import { CustomerRegistrationServiceService } from './Customer-registration-Service.service';
 
 @Component({
   selector: 'app-customer-registration',
@@ -9,14 +10,22 @@ import { Customer } from '../customer';
 })
 export class CustomerRegistrationComponent implements OnInit {
 
-  account:Account=new Account();
-  
-  customer:Customer=new Customer();
-
-  constructor( ) { }
+  constructor(private customerRegistrationService:CustomerRegistrationServiceService) { }
 
   ngOnInit() {
   }
+  account:Account= new Account()
+
+  register(){
+    console.log(this.account)
+    this.customerRegistrationService.createCustomerRegistration(this.account).subscribe(
+      data=>{
+        console.log(data)
+        this.account=new Account()
+      }
+    )
+  }
+
 
  
   

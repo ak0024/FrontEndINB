@@ -11,10 +11,12 @@ a{
 
 .main-header {
     width: 100%;
-   
+    margin-top:0px;
     background: #088395;
-    padding: auto;
+    /* padding: auto; */
     text-align: left;
+    text-decoration: none;
+    
 }
 .main-header > div{
     display: inline-block;
@@ -41,11 +43,11 @@ a{
   
 }
 .button{
-    background-color: black;
+    background-color: white;
     padding: 8px;
     border-radius: 31px;
     border: 2px solid black;
-    color: white ;
+    color: black;
     border-style: none;
     box-shadow: none;
     font-weight: bold;
@@ -53,7 +55,7 @@ a{
     cursor: pointer;
 }
 .button:hover, .button:active{
-    background-color: white;
+    background-color: rgb(17, 221, 71);
     color: black;
 }
 .button2{
@@ -70,6 +72,6 @@ a{
     margin-left: 1100px;
 }
 .button2:hover, .button2:active{
-    background-color: black;
+    background-color: green;
     color: white;
 }
