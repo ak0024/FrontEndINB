@@ -57,6 +57,11 @@ h1{
 
 .pwd{
     float: right;
+    width: 45%;
+}
+
+.cpwd{
+    float: right;
     width: 48%;
 }
 
@@ -64,8 +69,7 @@ h1{
     float: left;
     width: 48%;
 }
-.add2{
-    size: 50;
+.add2{ 
     float: right;
     width: 48%;
 }
