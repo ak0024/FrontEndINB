@@ -43,7 +43,10 @@
 input,select{
     height: 25px;
     border-radius: 10px;
+    border-color: black;
 }
+
+
 .head{
     text-align: center;
     background-color:#088395;
