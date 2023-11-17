@@ -26,13 +26,13 @@
 
 <br>
   <label>State : </label>&nbsp;&nbsp;
-  <select (change)="onStateChange($event)" [(ngModel)]="account.customer_id.state">
+  <select (change)="onStateChange($event)" name="state" [(ngModel)]="account.customer_id.state">
     <option value="">Select State</option>
     <option *ngFor="let state of states" [value]="state">{{ state }}</option>
   </select><br><br>
 
   <label *ngIf="cities.length > 0">city : </label>&nbsp;&nbsp;
-  <select *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city">
+  <select  name="name" *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city">
     <option value="">Select City</option>
     <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
   </select><br><br>
@@ -77,7 +77,7 @@
 
     <label>Confirm-Password : </label>&nbsp;
     <input type="password" id="Confirm-password" name="Confirm-password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
-      [(ngModel)]="account.customer_id.confirmPassword" size="40"><br><br>
+       size="40"><br><br>
 
 
 

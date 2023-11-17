@@ -4,5 +4,6 @@ export class Admin{
     confirmPassword:String="";
     passwordReachLimit: number=0;
     message:String="";
+   
 
 }
