@@ -2,14 +2,13 @@
 
 <div class="background-image"></div>
 <div class="main-header">
-  <br>
 <button type="submit"  (click)="goToCustomer()" class="button2"> Customer Login</button><br>
 <br>
 </div>
 <div class="adminlogin">
 <form (ngSubmit)="adminLogin()">  
     <h1>Admin Login</h1>
-    
+    <br><br>
     <label for="username">Username:</label>
     <input type="text" id="username" placeholder="username" [(ngModel)]="admin.userName" name="username" required>
     <br><br>

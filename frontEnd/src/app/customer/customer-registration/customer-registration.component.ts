@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/bankslip/account';
-import { Customer } from '../customer';
+import { Account } from 'src/app/domain/account';
+import { Customer } from '../../domain/customer';
 import { CustomerRegistrationServiceService } from './Customer-registration-Service.service';
 
 @Component({

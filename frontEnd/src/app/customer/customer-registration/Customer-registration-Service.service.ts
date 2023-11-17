@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CustomerRegistrationComponent } from './customer-registration.component';
-import { Account } from 'src/app/bankslip/account';
+import { Account } from 'src/app/domain/account';
 import { Observable } from 'rxjs';
 
 @Injectable({
