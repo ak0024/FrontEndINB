@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Admin } from '../../domain/admin';
+import { Admin } from '../../Domain/admin';
 
 @Component({
   selector: 'app-adminhome',

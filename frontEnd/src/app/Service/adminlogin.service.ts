@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 
 import { Observable } from 'rxjs';
-import { Admin } from '../domain/admin';
+import { Admin } from '../Domain/admin';
 
 @Injectable({
   providedIn: 'root'

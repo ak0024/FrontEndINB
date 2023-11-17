@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 
 import { Observable } from 'rxjs';
-import { CustomerLogin } from '../domain/CustomerLogin';
+import { CustomerLogin } from '../Domain/CustomerLogin';
 
 
 @Injectable({

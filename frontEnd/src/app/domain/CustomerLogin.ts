@@ -1,4 +1,6 @@
-import { Customer } from "./customer";
+import { Customer } from "./Customer";
+
+
 
 
 export class CustomerLogin {
