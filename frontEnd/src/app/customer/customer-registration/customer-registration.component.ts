@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/bankslip/account';
+import { Customer } from '../customer';
 import { CustomerRegistrationServiceService } from './Customer-registration-Service.service';
 
 @Component({
@@ -26,4 +27,6 @@ export class CustomerRegistrationComponent implements OnInit {
   }
 
 
+ 
+  
 }
