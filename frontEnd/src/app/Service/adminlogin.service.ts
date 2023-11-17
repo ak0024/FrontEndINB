@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<<< HEAD:frontEnd/src/app/services/adminlogin.service.ts
-import { Admin } from '../domain/admin';
-========
-import { Admin } from '../admin/adminlogin/admin';
->>>>>>>> 96b246f8b08fc33e268d844e328d3371b830edf9:frontEnd/src/app/Service/adminlogin.service.ts
+
+
+
 import { Observable } from 'rxjs';
+import { Admin } from '../domain/admin';
 
 @Injectable({
   providedIn: 'root'

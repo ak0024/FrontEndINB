@@ -1,5 +1,8 @@
 import { Customer } from "./customer";
 
+
+
+
 export class Account{
      opening_date : any=null;
 	 minimum_balance: number=0;

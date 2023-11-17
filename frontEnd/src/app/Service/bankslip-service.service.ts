@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-<<<<<<<< HEAD:frontEnd/src/app/services/bankslip-service.service.ts
-import { BankSlip } from '../domain/BankSlip';
-========
-import { BankSlip } from '../Domain/BankSlip';
->>>>>>>> 96b246f8b08fc33e268d844e328d3371b830edf9:frontEnd/src/app/Service/bankslip-service.service.ts
+
+
+
 import { Observable } from 'rxjs';
+import { BankSlip } from '../domain/BankSlip';
 @Injectable({
   providedIn: 'root'
 })

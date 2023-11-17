@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<<< HEAD:frontEnd/src/app/services/LoginService.service.ts
-import { CustomerLogin } from '../domain/CustomerLogin';
-========
-import { CustomerLogin } from '../Domain/CustomerLogin';
->>>>>>>> 96b246f8b08fc33e268d844e328d3371b830edf9:frontEnd/src/app/Service/LoginService.service.ts
+
+
+
 import { Observable } from 'rxjs';
+import { CustomerLogin } from '../domain/CustomerLogin';
+
 
 @Injectable({
     providedIn:'root'
