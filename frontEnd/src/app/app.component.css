@@ -97,3 +97,32 @@ h1{
     float: left;
     width: 48%;
 }
+.main-footer{
+       
+    border-style: none;
+    text-align: center;
+    background-color: black;
+    
+}
+
+
+.main-footer__link{  
+ display: inline-block;
+ margin-top: 15px;
+ text-align: center;
+ margin-bottom: 15px;
+ padding: 15px;
+ list-style: none;
+ 
+ /* text-decoration: none; */
+}
+.main-footer__link a{
+ color: white;
+ text-decoration: none;
+}
+.main-footer__link a:hover,
+.main-footer__link a:active{
+    background: white;
+    color:black;
+    cursor: pointer;
+}
