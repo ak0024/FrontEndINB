@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Admin } from '../admin/adminlogin/admin';
+
+
+
 import { Observable } from 'rxjs';
+import { Admin } from '../Domain/admin';
 
 @Injectable({
   providedIn: 'root'

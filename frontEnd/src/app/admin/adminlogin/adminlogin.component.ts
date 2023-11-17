@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Admin } from './admin';
+
 import { AdminloginService } from '../../Service/adminlogin.service';
 import { Router } from '@angular/router';
+import { Admin } from 'src/app/Domain/admin';
 
 @Component({
   selector: 'app-adminlogin',

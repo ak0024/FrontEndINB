@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { BankSlip } from '../../Domain/BankSlip';
-import { BankslipServiceService } from '../../Service/bankslip-service.service';
+
 import { Router } from '@angular/router';
+import { BankslipServiceService } from 'src/app/Service/bankslip-service.service';
+import { BankSlip } from 'src/app/Domain/BankSlip';
 
 @Component({
   selector: 'app-claim-bankslip',

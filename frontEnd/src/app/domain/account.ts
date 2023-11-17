@@ -1,4 +1,8 @@
-import { Customer } from "./customer";
+import { Customer } from "./Customer";
+
+
+
+
 
 export class Account{
      opening_date : any=null;
@@ -9,7 +13,7 @@ export class Account{
 	 account_type:string="";
 	 overdraft_limit:number=0;
 	 overdraft_rate_of_interest:number=0;
-	 customer_id:Customer=new Customer();
+	 customer_id:Customer = new Customer();
 	 fixedDeposit:string="";
 	 fdMonths:number=0;
 	 fdRateOfInterest:number=0;
