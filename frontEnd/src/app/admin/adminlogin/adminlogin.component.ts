@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Admin } from '../../domain/admin';
-import { AdminloginService } from '../../services/adminlogin.service';
+import { Admin } from './admin';
+import { AdminloginService } from '../../Service/adminlogin.service';
 import { Router } from '@angular/router';
 
 @Component({
