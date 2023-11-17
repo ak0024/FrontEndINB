@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { DataServiceService } from './data-service.service';
+import { DataServiceService } from '../../Service/data-service.service';
 import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-registration-Service.service';
 import { Account } from 'src/app/Domain/account';
 import { Router } from '@angular/router';
@@ -59,6 +59,9 @@ export class CustomerRegistrationComponent implements OnInit {
       }
     )
   }
+  validateAccount(){
+    this.router.navigate(['registrationWaiting']);
+      }
 
 
  
