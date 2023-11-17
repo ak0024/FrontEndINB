@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerServicesService } from 'src/app/customer-services.service';
-import { Customer } from '../customer';
+
+
 
 @Component({
   selector: 'app-customer-home',
