@@ -1,15 +1,14 @@
 
 body {
 
-    background-image: url('./app/customer/logo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-    font-family: 'Lora', serif;
+    /* background-image: url('./app/customer/logo-inb.png'); */
+    
+  
     text-align: center;
     
   }
 
   *{
     box-sizing: border-box;
+    margin: 0;
   }

@@ -38,6 +38,7 @@ a{
   text-align: center;
   margin-top: 50px;
   border-radius: 20px;
+  font-family: inherit;
   
 }
 .button{

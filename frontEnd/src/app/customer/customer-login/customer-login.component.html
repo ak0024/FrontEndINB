@@ -11,11 +11,11 @@
 <div class="login">
 <form (ngSubmit)="login()">
     <h1>Login</h1>
-    
-    <label for="username">Username:</label>
+    <br>
+    <label for="username">Username: &nbsp;&nbsp;</label>
     <input type="text" id="username" placeholder="username" [(ngModel)]="customerLogin.userName" name="username" required>
     <br><br>
-    <label for="password">Password:</label>
+    <label for="password">Password: &nbsp;&nbsp;</label>
     <input type="password" id="password" placeholder="password" [(ngModel)]="customerLogin.password" name="password" required>
     <br><br>
     <p [hidden]="customerLogin.userName==='' || customerLogin.password === '' " >{{customerLogin.message}}</p>

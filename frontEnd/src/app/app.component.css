@@ -1,3 +1,17 @@
+.header{
+    font-family: inherit;
+    background-color: #088395;
+    color: black;
+
+}
+
+/* .logo{
+    background-image: url("frontEnd/src/app/customer/resizedlogo.png");
+    width: 20%;
+    height: 10%;
+} */
+
+
 .my-button {
     background-color: rgb(25, 0, 255);
     color: white;
@@ -38,9 +52,9 @@ input{
 }
 h1{
     text-align: center;
-    background-color: black;
+    /* background-color: black; */
     color: white;
-    font-family: inherit;
+    /* font-family: inherit; */
 }
 .fname{
     float: left;

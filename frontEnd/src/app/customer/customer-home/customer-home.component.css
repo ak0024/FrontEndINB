@@ -213,8 +213,9 @@ gap: 30px;
 .option1 {
 border-left: 5px solid #010058af;
 background-color: var(--Border-color);
-color: white;
+color:black;
 cursor: pointer;
+transition: all 0.1s ease-in-out;
 }
 .option1:hover {
 border-left: 5px solid #010058af;
