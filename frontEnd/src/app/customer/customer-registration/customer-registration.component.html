@@ -1,18 +1,18 @@
 <h1 >CUSTOMER REGISTRATION!!</h1>
-<form >
+<form (ngSubmit)="register()" >
   <div class="registration">
     <div class="fname">
   <label>FirstName :  </label>
-  <input type="text" name="FirstName" size="50"><br><br>
+  <input type="text" name="FirstName" [(ngModel)]="account.customer_id.firstName" size="50"><br><br>
      </div>
      <div class="lname">
   <label>LastName :  </label>
-  <input type="text" name="LastName" size="50"><br><br>
+  <input type="text" name="LastName" [(ngModel)]="account.customer_id.lastName" size="50"><br><br>
     </div>
 
     <div class="acctyp">
       <label>AccountType :  </label>
-       <select name="AccountType" id="AccountType" style="width: 250px;"><br><br>>
+       <select name="AccountType" id="AccountType" [(ngModel)]="account.account_type" style="width: 250px;"><br><br>>
         <option value="selecttype">-- SELECT TYPE --</option>
         <option value="SAVINGS">SAVINGS</option>
         <option value="CURRENT">CURRENT</option>
@@ -21,59 +21,59 @@
   
     <div class="uname">
       <label>UserName :  </label>
-      <input type="text" name="UserName"size="50"><br><br>
+      <input type="text" name="UserName" [(ngModel)]="account.customer_id.userName"size="50"><br><br>
     </div>
 
     
 
 <div class="pwd">
   <label>Password :  </label>&nbsp;
-  <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required size="50"><br><br>
+  <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required [(ngModel)]="account.customer_id.password" size="50"><br><br>
 </div>
 
 <div class="add1">
   <label>Addressline 1:</label>
-  <input type="text" name="LastName" size="50"><br><br>
+  <input type="text" name="LastName" [(ngModel)]="account.customer_id.addressLine1" size="50"><br><br>
 </div>
 
 <div class="add2">
   <label>Addressline 2:</label>
-  <input type="text" name="addressline 2" size="50"><br><br>
+  <input type="text" name="addressline 2" [(ngModel)]="account.customer_id.addressLine2" size="50"><br><br>
 </div>
 
 <div class="add3">
   <label>Addressline 3:</label>
-  <input type="text" name="addressline 3" size="50"><br><br>
+  <input type="text" name="addressline 3" [(ngModel)]="account.customer_id.addressLine3" size="50"><br><br>
 </div>
 
 <div class="city">
   <label>City :  </label>&nbsp;
-  <input type="text" name="City"><br><br>
+  <input type="text" name="City" [(ngModel)]="account.customer_id.city"><br><br>
 </div>
 
 <div class="State">
   <label>State :  </label>&nbsp;&nbsp;
-  <input type="text" name="State"><br><br>
+  <input type="text" name="State" [(ngModel)]="account.customer_id.state"><br><br>
 </div>
 
 <div class="zip">
   <label>Zip :  </label>&nbsp;&nbsp;
-  <input type="text" name="Zip"><br><br>
+  <input type="text" name="Zip" [(ngModel)]="account.customer_id.zip"><br><br>
 </div>
 
 <div class="phone">
   <label for="phone">Phone :  </label>&nbsp;
-  <input type="tel" id="phone" pattern="\d{4}-\d{4}" placeholder="9999-9999"><br><br>
+  <input type="tel" id="phone" pattern="\d{4}-\d{4}" placeholder="9999-9999" [(ngModel)]="account.customer_id.phone"><br><br>
 </div>
   <div class="cell">
   <label for="cell">Cell :  </label>&nbsp;&nbsp;
-  <input type="tel" id="cell" name="cell" pattern="\d{5}-\d{5}"  placeholder="99999-99999"><br><br>
+  <input type="tel" id="cell" name="cell" pattern="\d{5}-\d{5}"  placeholder="99999-99999" [(ngModel)]="account.customer_id.cell"><br><br>
 </div>
   <div class="email">
   <label>Email :  </label>&nbsp;&nbsp;
-  <input type="email" name="email"><br><br>
+  <input type="email" name="email" [(ngModel)]="account.customer_id.email"><br><br>
 </div>
 
-  <button type="button" class="my-button" >NEXT</button>
+  <button type="submit" class="my-button" >NEXT</button>
 </div>
 </form>
