@@ -10,8 +10,7 @@ import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip.component';
 import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
 import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.component';
-import { CustomerforgotpasswordComponent } from './customer/customerforgotpassword/customerforgotpassword/customerforgotpassword.component';
-import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
+import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { EditProfileComponent } from './customer/edit-profile/edit-profile.compo
     ClaimBankslipComponent,
     CustomerRegistrationComponent,
     ForgotpasswordComponent,
-    CustomerforgotpasswordComponent,
-    EditProfileComponent
+    RegistrationWaitingComponent
   ],
   imports: [
     BrowserModule,
