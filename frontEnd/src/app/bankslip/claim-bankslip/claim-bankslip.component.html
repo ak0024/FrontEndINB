@@ -1,5 +1,6 @@
 
 <h1>CLAIM BANKSLIP</h1>
+<div [hidden]="flag"></div>
 <table border="1" id="Bankslip">
     <tr>
         <th>Chequeno</th>
@@ -19,7 +20,7 @@
         <td>{{Bankslip.payerbank}}</td>
         <td>{{Bankslip.chequedate}}</td>
         <td>{{Bankslip.amount}}</td>
-        <td><button>Claim</button>
+        <td><button [hidden] ="!flag" >Claim</button></td>
            
     </tr>
 </table>
