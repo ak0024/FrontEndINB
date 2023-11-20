@@ -63,14 +63,14 @@ export class CustomerRegistrationComponent implements OnInit {
     this.getCitiesByState(selectedState);
   }
   validatePassword() {
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    // var password = document.getElementById("password").value;
+    // var confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (password !== confirmPassword) {
-      document.getElementById("message").innerHTML = "Passwords do not match!";
-    } else {
-      document.getElementById("message").innerHTML = "";
-    }
+    // if (password !== confirmPassword) {
+    //   document.getElementById("message").innerHTML = "Passwords do not match!";
+    // } else {
+    //   document.getElementById("message").innerHTML = "";
+    // }
   }
  
   register() {
@@ -119,7 +119,7 @@ export class CustomerRegistrationComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         if (data[0] === 'success')
-          this.router.navigate(['registrationWaiting']);
+          this.router.navigateByUrl('registrationWaiting',{state:data})
         else this.router.navigate(['customerRegistration']);
         this.account = new Account();
       });
