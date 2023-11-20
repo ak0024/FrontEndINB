@@ -13,12 +13,15 @@ import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.c
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { LogoutComponent } from './customer/logout/logout.component';
+import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
+import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     // AppRoutingModule,
     CustomerLoginComponent,
+    CustomerHomeComponent,
     AdminloginComponent,
     AdminhomeComponent,
     ClaimBankslipComponent,
@@ -26,7 +29,8 @@ import { LogoutComponent } from './customer/logout/logout.component';
     ForgotpasswordComponent,
     RegistrationWaitingComponent,
     EditProfileComponent,
-    LogoutComponent
+    LogoutComponent,
+    CustomerapprovalComponent
   ],
   imports: [
     BrowserModule,

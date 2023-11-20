@@ -67,3 +67,7 @@ main{
   color: white;
   border: none;
 }
+
+.content{
+  text-align: center;
+}

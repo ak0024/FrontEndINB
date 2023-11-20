@@ -12,6 +12,13 @@ export class AdminApprovalService {
 
   customerStatus():Observable<Customer[]>{
     return this.httpClient.get<Customer[]>("http://localhost:8082/adminapi/customerStatus");
+  }
+
+  acceptCustomer(customerId:string):Observable<boolean>{
+    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/acceptCustomer/"+customerId);
+  }
   
+  rejectCustomer(customerId:string):Observable<boolean>{
+    return this.httpClient.delete<boolean>("http://localhost:8082/adminapi/rejectCustomer/"+customerId);
   }
 }

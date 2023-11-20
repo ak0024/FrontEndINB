@@ -13,21 +13,33 @@ import { RegistrationWaitingComponent } from './customer/registration-waiting/re
 import { LogoutComponent } from './customer/logout/logout.component';
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
+import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
+import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
+import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
+import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
-  {path:"customerHome",component:CustomerHomeComponent},
+  {path:"customerHome",component:CustomerHomeComponent,children:[
+    {path:"",component:CustomerViewComponent},
+    {path:"editprofile",component:EditProfileComponent},
+    {path:"transactions",component:CustomerTransactionComponent}
+  ]},
   {path:"editprofile", component: EditProfileComponent},  
   {path:"claimbankslip",component:ClaimBankslipComponent},
   {path:"adminlogin", component:AdminloginComponent},
-  {path:"adminhome", component:AdminhomeComponent},
+  {path:"adminhome", component:AdminhomeComponent,children:[
+    {path:"",component:CustomerapprovalComponent},
+    {path:"accountApprovel",component:AccountapprovalComponent},
+    {path:"passwordReachLimit",component:PasswordReachLimitComponent},
+    {path:"bankSlipApproval",component:BankSlipApprovalComponent}
+
+  ]},
   {path:"issueBankSlip",component:IssueBankSlipComponent},
   {path:"customerRegistration",component:CustomerRegistrationComponent},
   {path:"forgotAdminPassword", component:ForgotpasswordComponent},
   {path:"registrationWaiting", component:RegistrationWaitingComponent},
-  {path:"logout", component: LogoutComponent},
-  {path:"customerapproval", component:CustomerapprovalComponent},
-  {path:"accountapproval", component:AccountapprovalComponent}
+  {path:"logout", component: LogoutComponent}
 ];
 
 @NgModule({

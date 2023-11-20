@@ -6,25 +6,43 @@ import { AdminApprovalService } from 'src/app/Service/admin-approval.service';
 @Component({
   selector: 'app-customerapproval',
   templateUrl: './customerapproval.component.html',
-  styleUrls: ['./customerapproval.component.css']
+  styleUrls: ['./customerapproval.component.css'],
 })
 export class CustomerapprovalComponent implements OnInit {
-admin:Admin= new Admin();
-customers:Customer[]=[];
+  admin: Admin = new Admin();
+  customers: Customer[] = [];
 
-constructor(private adminServie:AdminApprovalService){}
+  constructor(private adminServie: AdminApprovalService) {}
 
-ngOnInit(){
-this.onReload()
-}
+  ngOnInit() {
+    this.onReload();
+  }
 
-onReload(){
-    this.adminServie.customerStatus().subscribe(
+  onReload() {
+    this.adminServie.customerStatus().subscribe((data) => {
+      this.customers = data;
+      console.log(data);
+    });
+  }
+
+  acceptCustomer(customerId:string){
+    this.adminServie.acceptCustomer(customerId).subscribe(
       data=>{
-        this.customers=data
-        console.log(data)
+        if(data){
+          this.onReload()
+        }
       }
     )
-}
+    
+  }
 
+  rejectCustomer(customerId:string){
+    this.adminServie.rejectCustomer(customerId).subscribe(
+      data=>{
+        if(data){
+          this.onReload()
+        }
+      }
+    )
+  }
 }

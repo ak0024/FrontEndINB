@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SidenavbarComponent } from './sidenavbar.component';
+import { PasswordReachLimitComponent } from './password-reach-limit.component';
 
-describe('SidenavbarComponent', () => {
-  let component: SidenavbarComponent;
-  let fixture: ComponentFixture<SidenavbarComponent>;
+describe('PasswordReachLimitComponent', () => {
+  let component: PasswordReachLimitComponent;
+  let fixture: ComponentFixture<PasswordReachLimitComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidenavbarComponent ]
+      declarations: [ PasswordReachLimitComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavbarComponent);
+    fixture = TestBed.createComponent(PasswordReachLimitComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
