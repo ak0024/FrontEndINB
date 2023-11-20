@@ -29,7 +29,7 @@ export class CustomerHomeComponent implements OnInit {
   }
 
   goToEditProfie(){
-
+    this.router.navigate(['editprofile']);
   }
   
   logout(){
