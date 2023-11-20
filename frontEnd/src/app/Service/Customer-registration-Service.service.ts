@@ -11,9 +11,9 @@ export class CustomerRegistrationServiceService {
 
 constructor(private httpClient: HttpClient) { }
 
-createCustomerRegistration(account: Account): Observable<string>{
+createCustomerRegistration(account: Account): Observable<String>{
   console.log(account)
-  return this.httpClient.post<string>('http://localhost:8082/accountapi/newAccount', account)
+  return this.httpClient.post<String>('http://localhost:8082/accountapi/newAccount', account)
 }
 
 }

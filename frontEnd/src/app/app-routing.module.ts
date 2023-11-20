@@ -8,23 +8,29 @@ import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
 import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.component';
+import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
+import { LogoutComponent } from './customer/logout/logout.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
   {path:"customerHome",component:CustomerHomeComponent},
+  {path:"editprofile", component: EditProfileComponent},  
   {path:"claimbankslip",component:ClaimBankslipComponent},
   {path:"adminlogin", component:AdminloginComponent},
   {path:"adminhome", component:AdminhomeComponent},
   {path:"issueBankSlip",component:IssueBankSlipComponent},
   {path:"customerRegistration",component:CustomerRegistrationComponent},
   {path:"forgotAdminPassword", component:ForgotpasswordComponent},
-  {path:"registrationWaiting", component:RegistrationWaitingComponent}
+  {path:"registrationWaiting", component:RegistrationWaitingComponent},
+  {path:"logout", component: LogoutComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  
+}
   

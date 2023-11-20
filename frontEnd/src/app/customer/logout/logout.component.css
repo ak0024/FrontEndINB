@@ -1,0 +1,17 @@
+.button2{
+    background-color: skyblue;
+    padding: 8px;
+    border-radius: 31px;
+    border: 2px solid black;
+    color:black ;
+    border-style: none;
+    box-shadow: none;
+    font-weight: bold;
+    font:inherit;
+    cursor: pointer;
+    margin-left: 1100px;
+}
+.button2:hover, .button2:active{
+    background-color: darkblue;
+    color: white;
+}
