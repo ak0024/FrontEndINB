@@ -1,10 +1,21 @@
 .header{
     font-family: inherit;
     background-color: #088395;
-    color: black;
+    color: white;
+    font-size: xx-large;
+    padding: auto;
+    text-align: left;
+   
+    text-decoration: none;
+    font-weight: bold;
+    
 
 }
-
+a{
+    color:skyblue;
+    margin-left: 20px;
+    text-decoration: none;
+}
 /* .logo{
     background-image: url("frontEnd/src/app/customer/resizedlogo.png");
     width: 20%;
@@ -115,17 +126,19 @@ h1{
        
     border-style: none;
     text-align: center;
-    background-color: black;
+    background-color: #088395;
+    margin-top: 8%;
     
 }
 
 
 .main-footer__link{  
  display: inline-block;
- margin-top: 15px;
+ margin-top: 10px;
  text-align: center;
- margin-bottom: 15px;
- padding: 15px;
+ margin-bottom: 10px;
+
+ padding: 2px;
  list-style: none;
  
  /* text-decoration: none; */

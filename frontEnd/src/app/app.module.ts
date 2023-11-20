@@ -11,23 +11,28 @@ import { ClaimBankslipComponent } from './bankslip/claim-bankslip/claim-bankslip
 import { CustomerRegistrationComponent } from './customer/customer-registration/customer-registration.component';
 import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.component';
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
+import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
+import { LogoutComponent } from './customer/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    // AppRoutingModule,
     CustomerLoginComponent,
     AdminloginComponent,
     AdminhomeComponent,
     ClaimBankslipComponent,
     CustomerRegistrationComponent,
     ForgotpasswordComponent,
-    RegistrationWaitingComponent
+    RegistrationWaitingComponent,
+    EditProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
