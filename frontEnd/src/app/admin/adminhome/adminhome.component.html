@@ -1,20 +1,23 @@
-<header>
+<header class="main-header">
+    <div>
+        <a href="#" class="main-header__brand">
+            iNB
+        </a>
+    </div><nav class="main-nav">
+        <ul class="main-nav__items">
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="{{admin.userName}}">Profile</a>
+            </li>
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="new-request/{{admin.userName}}">Account Approval</a>
+            </li>
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="viewRequests">Bankslip Approval</a>
+            </li>
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="adminlogin">Logout</a>
+            </li>
+        </ul>
+    </nav>
+  </header>
 
-    <div class="searchbar">
-       <label>Hi {{admin.userName}}</label>
-    </div>
-    <div class="message">
-        <div class="circle"></div>
-        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-             class="icn"
-             alt="">
-        <div class="dp">
-          <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-                class="dpicn"
-                alt="dp">
-          </div>
-    </div>
-
-</header>

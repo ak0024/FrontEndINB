@@ -1,71 +1,69 @@
-header {
-    height: 70px;
-    width: 100vw;
-    padding: 0 30px;
-    background-color: var(--background-color1);
-    position: fixed;
-    z-index: 100;
-    box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .icn {
-    height: 30px;
-  }
-  .menuicn {
-    cursor: pointer;
-  }
-   
-  .searchbar,
-.message,
-.logosec {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.main-header{
+  width: 100%;
+  background-color: #088395;
+  padding: 8px 16px;
+} 
+
+main{
+  margin: 0;
 }
-.searchbar input {
-    width: 250px;
-    height: 42px;
-    border-radius: 50px 0 0 50px;
-    background-color: var(--background-color3);
-    padding: 0 20px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-  }
-  .searchbtn {
-    width: 50px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0px 50px 50px 0px;
-    background-color: var(--secondary-color);
-    cursor: pointer;
-  }
-   
-  .message {
-    gap: 40px;
-    position: relative;
-    cursor: pointer;
-  }
-  .circle {
-    height: 7px;
-    width: 7px;
-    position: absolute;
-    background-color: #fa7bb4;
-    border-radius: 50%;
-    left: 19px;
-    top: 8px;
-  }
-  .dp {
-    height: 40px;
-    width: 40px;
-    background-color: #626262;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+.main-header__brand{
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: x-large;
+  color: #99dbdd;
+  margin-left: -225px;
+}
+
+.main-nav{
+  width: 75%;
+  text-align: right;
+  
+}
+
+.main-nav__items{
+  margin: 0;
+  list-style: none;
+  margin-right: -150px;
+  
+  
+}
+
+.main-header div , .main-nav{
+  display: inline-block;
+  
+}
+
+.main-nav__item{
+  display: inline-block;
+  padding: 10px;
+  
+}
+.main-nav__items a{
+  text-decoration: none;
+  color:  #0e4f1f;
+  font-weight: bold;
+  
+}
+.main-nav__item__cta a{
+  color: black;
+  background-color: skyblue;
+  padding: 5px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+.main-nav__items a:hover,
+.main-nav__items a:active{
+  background-color: darkblue;
+  color:white;
+}
+
+
+
+.main-nav__item__cta a:active,
+.main-nav__item__cta a:hover{
+  background-color: darkblue;
+  color: white;
+  border: none;
+}
