@@ -147,7 +147,7 @@
       <tr>
         <td><label>Password : </label></td>
         <td><input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
-            [(ngModel)]="account.customer_id.password" size="40"></td>
+            [(ngModel)]="account.customer_id.password" size="40" minlength="6" maxlength="8"></td>
 
       </tr>
       <tr>
@@ -160,7 +160,7 @@
         </td>
         <td>
           <input type="password" id="Confirm-password" name="Confirm-password" [(ngModel)]="confirmPassword"
-            pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required size="40">
+            pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" minlength="6" maxlength="8" size="40" >
         </td>
 
 
@@ -173,5 +173,5 @@
     </table>
     <button type="submit" class="my-button">submit</button>
   </div>
-
+<p>{{customer.message}}</p>
 </form>
