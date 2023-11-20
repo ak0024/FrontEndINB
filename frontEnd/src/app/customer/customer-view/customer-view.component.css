@@ -17,14 +17,23 @@
     overflow: hidden;
 }
 
-.card img {
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 120px; /* Set the height of the image as needed */
-    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    height: 120px;
+    object-fit: cover;
+    background: linear-gradient(to bottom right, #0066ff 54%, #000066 100%);
+    color: wheat;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .card-content {
     padding: 15px;
+    background-color: #ddd;
 }
 
 

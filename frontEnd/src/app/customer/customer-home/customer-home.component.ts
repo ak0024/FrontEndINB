@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./customer-home.component.css'],
 })
 export class CustomerHomeComponent implements OnInit {
-  allCustomers: Customer[] = [];
+ customer:Customer=new Customer();
 
   constructor(
     private customerservice: CustomerServicesService,
@@ -20,7 +20,7 @@ export class CustomerHomeComponent implements OnInit {
   getCustomerByCustomerId(customerId: number) {}
 
   ngOnInit() {
-    if (!sessionStorage.getItem('customerLoggedIn')) {
+    if (!sessionStorage.getItem('customerLoggedIn') ||sessionStorage.getItem('customerLoggedIn')==="false") {
       Swal.fire({
         position: 'center',
         icon: 'error',
@@ -29,6 +29,8 @@ export class CustomerHomeComponent implements OnInit {
     })
       this.router.navigate(['']);
     }
+    this.customer=JSON.parse(sessionStorage.getItem('customer')||'{}');
+
   }
 
   goToEditProfie() {
@@ -36,6 +38,7 @@ export class CustomerHomeComponent implements OnInit {
   }
 
   logOut() {
+    sessionStorage.setItem("customerLoggedIn","false")
     this.router.navigate(['']);
   }
 }
