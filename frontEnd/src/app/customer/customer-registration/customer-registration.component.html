@@ -1,7 +1,10 @@
 <div class="head">
-  <h1 >Customer Registration</h1><br>
+  <h1>CUSTOMER REGISTRATION</h1>
 </div>
 <form (ngSubmit)="register()">
+
+
+
   <div class="registration">
 
     <label>FirstName : </label>
@@ -73,15 +76,15 @@
     <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
       [(ngModel)]="account.customer_id.password" size="40"><br><br>
 
-      
+
+
     <label>Confirm-Password : </label>&nbsp;
     <input type="password" id="Confirm-password" name="Confirm-password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
-      [(ngModel)]="account.customer_id.confirmPassword" oninput="validatePassword()" size="40"><br><br>
+      [(ngModel)]="account.customer_id.confirmPassword" size="40"><br><br>
 
 
 
     <button type="submit" class="my-button">submit</button>
-  
   </div>
-</div>
+
 </form>

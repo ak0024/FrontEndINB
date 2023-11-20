@@ -39,7 +39,7 @@ td{
     background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-   
+   text-align: center;
     top: 50%;
     left: 70%;
     width: 80%;
@@ -65,6 +65,10 @@ input,select{
     border-color: black;
 }
 
+
+label{
+  font-size: larger;
+}
 
 .head{
     text-align: center;
