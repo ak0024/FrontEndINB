@@ -16,5 +16,6 @@ export class Customer{
     customerStatus: string='';
     passwordReachLimit: number=0;
     confirmPassword:String="";
+    message:String="";
 
 }

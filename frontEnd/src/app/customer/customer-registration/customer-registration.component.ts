@@ -4,6 +4,7 @@ import { DataServiceService } from '../../Service/data-service.service';
 import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-registration-Service.service';
 import { Account } from 'src/app/Domain/account';
 import { Router } from '@angular/router';
+import { Customer } from 'src/app/Domain/Customer';
 
 @Component({
   selector: 'app-customer-registration',
@@ -14,6 +15,7 @@ export class CustomerRegistrationComponent implements OnInit {
   states: string[] = [];
   cities: string[] = [];
   selectedState: string = '';
+  customer:Customer=new Customer;
 
 
   firstNameReq: boolean = false;
@@ -57,12 +59,25 @@ export class CustomerRegistrationComponent implements OnInit {
       });
   }
 
+  validatePassword(){
+    if(this.account.customer_id.password!=this.confirmPassword){
+    console.log("not same password");
+    this.customer.message="password mismatch!";
+    }
+    else{
+    (this.account.customer_id.password=this.confirmPassword)
+        console.log("this.customer");
+        this.customer.message="password matched";
+      }     
+    } 
+  
+    
   onStateChange(event: Event) {
     const selectedState = (event.target as HTMLSelectElement).value;
     // Now, use selectedState as needed...
     this.getCitiesByState(selectedState);
   }
-  validatePassword() {
+  //validatePassword() {
     // var password = document.getElementById("password").value;
     // var confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -71,7 +86,7 @@ export class CustomerRegistrationComponent implements OnInit {
     // } else {
     //   document.getElementById("message").innerHTML = "";
     // }
-  }
+ // }
  
   register() {
     if (this.account.customer_id.firstName === "") {
