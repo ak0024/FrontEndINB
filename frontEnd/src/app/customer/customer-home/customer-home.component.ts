@@ -29,7 +29,11 @@ export class CustomerHomeComponent implements OnInit {
   }
 
   goToEditProfie(){
-    
+
+  }
+  
+  logOut(){
+      
   }
 
 }

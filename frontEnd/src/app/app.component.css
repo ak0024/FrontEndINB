@@ -5,10 +5,17 @@
     font-size: xx-large;
     padding: auto;
     text-align: left;
+   
+    text-decoration: none;
+    font-weight: bold;
     
 
 }
-
+a{
+    color:skyblue;
+    margin-left: 20px;
+    text-decoration: none;
+}
 /* .logo{
     background-image: url("frontEnd/src/app/customer/resizedlogo.png");
     width: 20%;

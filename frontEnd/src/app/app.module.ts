@@ -12,10 +12,12 @@ import { CustomerRegistrationComponent } from './customer/customer-registration/
 import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.component';
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
+import { LogoutComponent } from './customer/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    // AppRoutingModule,
     CustomerLoginComponent,
     AdminloginComponent,
     AdminhomeComponent,
@@ -23,7 +25,8 @@ import { EditProfileComponent } from './customer/edit-profile/edit-profile.compo
     CustomerRegistrationComponent,
     ForgotpasswordComponent,
     RegistrationWaitingComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
