@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
+import { Account } from 'src/app/Domain/account';
 import { CustomerServicesService } from 'src/app/Service/customer-services.service';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./customer-home.component.css'],
 })
 export class CustomerHomeComponent implements OnInit {
- customer:Customer=new Customer();
+  customer: Customer = new Customer();
+  accounts: Account[] = [];
 
   constructor(
     private customerservice: CustomerServicesService,
@@ -20,17 +22,25 @@ export class CustomerHomeComponent implements OnInit {
   getCustomerByCustomerId(customerId: number) {}
 
   ngOnInit() {
-    if (!sessionStorage.getItem('customerLoggedIn') ||sessionStorage.getItem('customerLoggedIn')==="false") {
+    if (
+      !sessionStorage.getItem('customerLoggedIn') ||
+      sessionStorage.getItem('customerLoggedIn') === 'false'
+    ) {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title:"Error",
-        text:"First login to continue"
-    })
+        title: 'Error',
+        text: 'First login to continue',
+      });
       this.router.navigate(['']);
     }
-    this.customer=JSON.parse(sessionStorage.getItem('customer')||'{}');
-
+    this.customer = JSON.parse(sessionStorage.getItem('customer') || '{}');
+    this.customerservice
+      .getAccountByCustomerId(this.customer.customerId)
+      .subscribe((data) => {
+        this.accounts = data;
+        sessionStorage.setItem("accounts",JSON.stringify(data))
+      });
   }
 
   goToEditProfie() {
@@ -38,7 +48,7 @@ export class CustomerHomeComponent implements OnInit {
   }
 
   logOut() {
-    sessionStorage.setItem("customerLoggedIn","false")
+    sessionStorage.setItem('customerLoggedIn', 'false');
     this.router.navigate(['']);
   }
 }

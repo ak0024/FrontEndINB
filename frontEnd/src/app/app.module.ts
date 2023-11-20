@@ -15,6 +15,7 @@ import { EditProfileComponent } from './customer/edit-profile/edit-profile.compo
 import { LogoutComponent } from './customer/logout/logout.component';
 import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
+import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CustomerapprovalComponent } from './admin/customerapproval/customerappr
     RegistrationWaitingComponent,
     EditProfileComponent,
     LogoutComponent,
-    CustomerapprovalComponent
+    CustomerapprovalComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,

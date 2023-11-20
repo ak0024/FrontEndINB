@@ -1,43 +1,11 @@
 <div class="card-container">
-    <!-- Card 1 -->
-    <div class="card">
-     <div class="color">hhh</div>
+  
+    <div class="card"  *ngFor="let item of accounts">
+     <div class="color">{{item.account_id}}<br>({{item.account_type}})</div>
       <div class="card-content">
-        <h3>Card 1</h3>
+        <h3>&#8377; {{item.current_balance}}</h3>
         <p>Description for Card 1.</p>
       </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <div class="color"></div>
-      <div class="card-content">
-        <h3>Card 2</h3>
-        <p>Description for Card 2.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="color"></div>
-      <div class="card-content">
-        <h3>Card 2</h3>
-        <p>Description for Card 2.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="color"></div>
-      <div class="card-content">
-        <h3>Card 2</h3>
-        <p>Description for Card 2.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="color"></div>
-      <div class="card-content">
-        <h3>Card 2</h3>
-        <p>Description for Card 2.</p>
-      </div>
-    </div>
-    
-    
+    </div>    
   </div>
 
