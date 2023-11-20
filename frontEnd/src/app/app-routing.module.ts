@@ -11,6 +11,8 @@ import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.c
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 import { LogoutComponent } from './customer/logout/logout.component';
+import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
+import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:"customerRegistration",component:CustomerRegistrationComponent},
   {path:"forgotAdminPassword", component:ForgotpasswordComponent},
   {path:"registrationWaiting", component:RegistrationWaitingComponent},
-  {path:"logout", component: LogoutComponent}
+  {path:"logout", component: LogoutComponent},
+  {path:"customerapproval", component:CustomerapprovalComponent},
+  {path:"accountapproval", component:AccountapprovalComponent}
 ];
 
 @NgModule({

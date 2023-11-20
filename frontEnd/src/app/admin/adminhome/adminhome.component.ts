@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Admin } from '../../Domain/admin';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminhome',
@@ -8,5 +9,10 @@ import { Admin } from '../../Domain/admin';
 })
 export class AdminhomeComponent {
   admin:Admin= new Admin();
+
+constructor(private router:Router){
+
+}
+
 
 }

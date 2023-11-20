@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration-waiting.component.css']
 })
 export class RegistrationWaitingComponent {
+  word:any
 constructor(private router:Router){
+  this.word=this.router.getCurrentNavigation()?.extras.state;
 
 }
 
