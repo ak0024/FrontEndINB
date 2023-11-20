@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Customer } from 'src/app/Domain/Customer';
+import { CustomerServicesService } from 'src/app/Service/customer-services.service';
 
 
 
@@ -10,20 +12,24 @@ import { Router } from '@angular/router';
 })
 export class CustomerHomeComponent implements OnInit {
 
-  // allCustomers: Customer[] = [];
+  allCustomers: Customer[] = [];
 
-  // constructor( private customerservice: CustomerServicesService, private router: Router) {
+  constructor( private customerservice: CustomerServicesService, private router: Router) {
 
 
-  //  }
+   }
 
-  //  getCustomerByCustomerId(customerId: number){
+   getCustomerByCustomerId(customerId: number){
 
-  //  }
+   }
 
 
   ngOnInit() {
 
+  }
+
+  goToEditProfie(){
+    
   }
 
 }

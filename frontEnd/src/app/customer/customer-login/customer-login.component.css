@@ -43,7 +43,7 @@ a{
   
 }
 .button{
-    background-color: white;
+    background-color: skyblue;
     padding: 8px;
     border-radius: 31px;
     border: 2px solid black;
@@ -55,11 +55,11 @@ a{
     cursor: pointer;
 }
 .button:hover, .button:active{
-    background-color: rgb(17, 221, 71);
-    color: black;
+    background-color: darkblue;
+    color:white;
 }
 .button2{
-    background-color: white;
+    background-color: skyblue;
     padding: 8px;
     border-radius: 31px;
     border: 2px solid black;
@@ -72,6 +72,6 @@ a{
     margin-left: 1100px;
 }
 .button2:hover, .button2:active{
-    background-color: green;
+    background-color: darkblue;
     color: white;
 }
