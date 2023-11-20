@@ -47,6 +47,10 @@ input,select{
 }
 
 
+label{
+  font-size: larger;
+}
+
 .head{
     text-align: center;
     background-color:#088395;
