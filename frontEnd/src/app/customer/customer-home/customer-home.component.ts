@@ -32,8 +32,8 @@ export class CustomerHomeComponent implements OnInit {
 
   }
   
-  logOut(){
-      
+  logout(){
+      this.router.navigate(['']);
   }
 
 }
