@@ -23,9 +23,6 @@ forgotPassword(admin:Admin):Observable<Admin>{
   return this.httpClient.put<Admin>("http://localhost:8082/adminapi/admins/admin",admin);
 }
 
-customerStatus():Observable<Customer>{
-  return this.httpClient.get<Customer>("http://localhost:8082/adminapi/customerStatus");
 
-}
    
 }
