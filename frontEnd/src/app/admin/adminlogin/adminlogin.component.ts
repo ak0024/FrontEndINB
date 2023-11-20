@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Admin } from './admin';
-import { AdminloginService } from '../adminlogin.service';
+
+import { AdminloginService } from '../../Service/adminlogin.service';
 import { Router } from '@angular/router';
+import { Admin } from 'src/app/Domain/admin';
 
 @Component({
   selector: 'app-adminlogin',
@@ -20,7 +21,7 @@ adminLogin(){
       if(this.admin.message=="Login Success")
           this.router.navigate(['adminhome'])
         else
-          this.router.navigate([''])   
+          this.router.navigate(['adminlogin'])   
       
     }
   )

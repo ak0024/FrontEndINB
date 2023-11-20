@@ -11,16 +11,18 @@ a{
 
 .main-header {
     width: 100%;
-   
+    margin-top:0px;
     background: #088395;
-    padding: auto;
+    /* padding: auto; */
     text-align: left;
+    text-decoration: none;
+    
 }
 .main-header > div{
     display: inline-block;
 }
 .login{
-   background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
@@ -41,11 +43,11 @@ a{
   
 }
 .button{
-    background-color: black;
+    background-color: skyblue;
     padding: 8px;
     border-radius: 31px;
     border: 2px solid black;
-    color: white ;
+    color: black;
     border-style: none;
     box-shadow: none;
     font-weight: bold;
@@ -53,11 +55,11 @@ a{
     cursor: pointer;
 }
 .button:hover, .button:active{
-    background-color: white;
-    color: black;
+    background-color: darkblue;
+    color:white;
 }
 .button2{
-    background-color: white;
+    background-color: skyblue;
     padding: 8px;
     border-radius: 31px;
     border: 2px solid black;
@@ -70,6 +72,6 @@ a{
     margin-left: 1100px;
 }
 .button2:hover, .button2:active{
-    background-color: black;
+    background-color: darkblue;
     color: white;
 }
