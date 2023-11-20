@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
 import { CustomerServicesService } from 'src/app/Service/customer-services.service';
 
-
-
 @Component({
   selector: 'app-customer-home',
   templateUrl: './customer-home.component.html',

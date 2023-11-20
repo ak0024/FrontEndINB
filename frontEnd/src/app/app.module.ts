@@ -13,6 +13,7 @@ import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.c
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { LogoutComponent } from './customer/logout/logout.component';
+import { SidenavbarComponent } from './customer/sidenavbar/sidenavbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LogoutComponent } from './customer/logout/logout.component';
     ForgotpasswordComponent,
     RegistrationWaitingComponent,
     EditProfileComponent,
-    LogoutComponent
+    LogoutComponent,
+    SidenavbarComponent
   ],
   imports: [
     BrowserModule,
