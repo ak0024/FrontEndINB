@@ -1,35 +1,45 @@
 <div class="head">
   <h1>CUSTOMER REGISTRATION</h1>
 </div>
-<form (ngSubmit)="register()">
+<link rel="stylesheet"  
+href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"   
+integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"   
+crossorigin="anonymous">
+<form (ngSubmit)="register()" class="pure-form pure-form-aligned">
   <div class="registration">
-
+    <fieldset>  
+      <div class="pure-control-group">
     <label>FirstName : </label>
     <input type="text" name="FirstName" [(ngModel)]="account.customer_id.firstName" size="40"><br><br>
-
+  </div>
+    <div class="pure-control-group">
     <label>LastName : </label>&nbsp;
     <input type="text" name="LastName" [(ngModel)]="account.customer_id.lastName" size="40"><br><br>
+  </div>
 
 
-
+    <div class="pure-control-group">
     <label>Address line 1:</label>
     <input type="text" name="LastName" [(ngModel)]="account.customer_id.addressLine1" size="40"><br><br>
- 
-
+  </div>
+    <div class="pure-control-group">
   <label>Address line 2:</label>
   <input type="text" name="addressline 2" [(ngModel)]="account.customer_id.addressLine2" size="40"><br><br>
-  
-
+</div>
+  <div class="pure-control-group">
   <label>Address line 3:</label>
   <input type="text" name="addressline 3" [(ngModel)]="account.customer_id.addressLine3" size="40"><br>
-  
+</div>
 
 <br>
+<div class="pure-control-group">
   <label>State : </label>&nbsp;&nbsp;
   <select (change)="onStateChange($event)" [(ngModel)]="account.customer_id.state" style="width: 300px;" >
     <option value="">Select State</option>
     <option *ngFor="let state of states" [value]="state">{{ state }}</option>
-  </select><br><br>
+  </select>
+</div>
+  <br><br>
 
   <label *ngIf="cities.length > 0">city : </label>&nbsp;&nbsp;
   <select *ngIf="cities.length > 0" [(ngModel)]="account.customer_id.city" style="width: 300px;">
@@ -37,51 +47,58 @@
     <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
   </select><br><br>
  
-
+  <div class="pure-control-group">
   <label>Zip : </label>&nbsp;&nbsp;
   <input type="text" name="Zip" pattern="\d{6}" maxlength="6" placeholder="6-digit" required
     [(ngModel)]="account.customer_id.zip"  size="40"><br><br>
+  </div>
 
-
+    <div class="pure-control-group">
   <label for="phone">Phone : </label>&nbsp;
   <input type="number" id="phone" name="phone" [(ngModel)]="account.customer_id.phone"  style="width: 300px;"><br><br>
+</div>
 
-
-  
+  <div class="pure-control-group"></div>
   <div class="cell">
     <label for="cell">Cell : </label>&nbsp;&nbsp;
     <input type="tel" id="cell" name="cell" maxlength="10" [(ngModel)]="account.customer_id.cell"  size="40"><br><br>
   </div>
+
+  <div class="pure-control-group">
   <div class="email">
     <label>Email : </label>&nbsp;&nbsp;
     <input type="email" name="email" [(ngModel)]="account.customer_id.email"  size="40"><br><br>
-
+  </div>
+    <div class="pure-control-group">
     <label>AccountType : </label>
     <select name="AccountType" id="AccountType" [(ngModel)]="account.account_type" style="width: 300px;" ><br><br>
       <option value="selecttype">-- SELECT TYPE --</option>
       <option value="SAVINGS">SAVINGS</option>
       <option value="CURRENT">CURRENT</option>
     </select>
-
+  </div>
     <br><br>
-
+    <div class="pure-control-group">
     <label>UserName : </label>
     <input type="text" name="UserName" [(ngModel)]="account.customer_id.userName" size="40"><br><br>
-
-
+  </div>
+    <div class="pure-control-group">
     <label>Password : </label>&nbsp;&nbsp;
     <input type="password" id="password" name="password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
       [(ngModel)]="account.customer_id.password" size="40"><br><br>
+    </div>
 
-
-
+      <div class="pure-control-group">
     <label>Confirm-Password : </label>&nbsp;
     <input type="password" id="Confirm-password" name="Confirm-password" pattern="[a-zA-Z0-9!@#$%^&*]{6,8}" required
       [(ngModel)]="account.customer_id.confirmPassword" size="40"><br><br>
-
+      </div>
 
 
     <button type="submit" class="my-button">submit</button>
+  
   </div>
+</fieldset> 
 </div>
+
 </form>
