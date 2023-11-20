@@ -63,6 +63,9 @@ export class CustomerRegistrationComponent implements OnInit {
     this.getCitiesByState(selectedState);
   }
 
+  validatePassword() {
+    if()
+
   register() {
     if (this.account.customer_id.firstName === "") {
       this.firstNameReq = true
