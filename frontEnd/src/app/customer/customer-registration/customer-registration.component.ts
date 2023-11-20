@@ -5,6 +5,7 @@ import { CustomerRegistrationServiceService } from 'src/app/Service/Customer-reg
 import { Account } from 'src/app/Domain/account';
 import { Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-registration',
@@ -15,8 +16,7 @@ export class CustomerRegistrationComponent implements OnInit {
   states: string[] = [];
   cities: string[] = [];
   selectedState: string = '';
-  customer:Customer=new Customer;
-
+  customer: Customer = new Customer();
 
   firstNameReq: boolean = false;
   lastNameReq: boolean = false;
@@ -31,19 +31,23 @@ export class CustomerRegistrationComponent implements OnInit {
   passwordReq: boolean = false;
   confirmPasswordReq: boolean = false;
 
+  userNameValidate: string = '';
 
-
+  word:any
   constructor(
     private customerRegistrationService: CustomerRegistrationServiceService,
     private dataService: DataServiceService,
     private router: Router
-  ) { }
+  ) {
+    this.word=this.router.getCurrentNavigation()?.extras.state;
+  }
 
   ngOnInit() {
     this.getStates();
+    console.log(this.word)
   }
   account: Account = new Account();
-  confirmPassword: string = ""
+  confirmPassword: string = '';
 
   getStates() {
     this.dataService.getStates().subscribe((states: string[]) => {
@@ -59,83 +63,119 @@ export class CustomerRegistrationComponent implements OnInit {
       });
   }
 
-  validatePassword(){
-    if(this.account.customer_id.password!=this.confirmPassword){
-    console.log("not same password");
-    this.customer.message="password mismatch!";
+  validatePassword() {
+    if (this.account.customer_id.password != this.confirmPassword) {
+      console.log('not same password');
+      this.customer.message = 'password mismatch!';
+    } else {
+      this.account.customer_id.password = this.confirmPassword;
+      console.log('this.customer');
+      this.customer.message = 'password matched';
     }
-    else{
-    (this.account.customer_id.password=this.confirmPassword)
-        console.log("this.customer");
-        this.customer.message="password matched";
-      }     
-    } 
-  
-    
+  }
+
   onStateChange(event: Event) {
     const selectedState = (event.target as HTMLSelectElement).value;
     // Now, use selectedState as needed...
     this.getCitiesByState(selectedState);
   }
-  //validatePassword() {
-    // var password = document.getElementById("password").value;
-    // var confirmPassword = document.getElementById("confirmPassword").value;
 
-    // if (password !== confirmPassword) {
-    //   document.getElementById("message").innerHTML = "Passwords do not match!";
-    // } else {
-    //   document.getElementById("message").innerHTML = "";
-    // }
- // }
- 
+  onUsernameChange(event: Event) {
+    const val = (event.target as HTMLSelectElement).value;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (val === '') this.userNameValidate = '';
+    else {
+      if (regex.test(val)) {
+        this.userNameValidate = 'valid';
+        console.log('Valid pattern');
+      } else {
+        this.userNameValidate = 'invalid';
+        console.log('Invalid pattern');
+      }
+    }
+  }
+
+  //validatePassword() {
+  // var password = document.getElementById("password").value;
+  // var confirmPassword = document.getElementById("confirmPassword").value;
+
+  // if (password !== confirmPassword) {
+  //   document.getElementById("message").innerHTML = "Passwords do not match!";
+  // } else {
+  //   document.getElementById("message").innerHTML = "";
+  // }
+  // }
+
   register() {
-    if (this.account.customer_id.firstName === "") {
-      this.firstNameReq = true
+    if (this.account.customer_id.firstName === '') {
+      this.firstNameReq = true;
     }
-    if (this.account.customer_id.lastName === "") {
-      this.lastNameReq = true
+    if (this.account.customer_id.lastName === '') {
+      this.lastNameReq = true;
     }
-    if (this.account.customer_id.addressLine1 === "") {
-      this.address1Req = true
+    if (this.account.customer_id.addressLine1 === '') {
+      this.address1Req = true;
     }
-    if (this.account.customer_id.state === "") {
-      this.stateReq = true
+    if (this.account.customer_id.state === '') {
+      this.stateReq = true;
     }
-    if (this.account.customer_id.state !== "" && this.account.customer_id.city === "") {
-      this.cityReq = true
+    if (
+      this.account.customer_id.state !== '' &&
+      this.account.customer_id.city === ''
+    ) {
+      this.cityReq = true;
     }
-    if(this.account.customer_id.zip===0){
-      this.zipReq=true
+    if (this.account.customer_id.zip === 0) {
+      this.zipReq = true;
     }
     if (this.account.customer_id.phone === 0) {
-      this.phoneReq = true
+      this.phoneReq = true;
     }
-    if (this.account.customer_id.email === "") {
-      this.emailReq = true
+    if (this.account.customer_id.email === '') {
+      this.emailReq = true;
     }
-    if (this.account.account_type === "") {
-      this.accountTypeReq = true
+    if (this.account.account_type === '') {
+      this.accountTypeReq = true;
     }
-    if (this.account.customer_id.userName === "") {
-      this.userNameReq = true
+    if (this.account.customer_id.userName === '') {
+      this.userNameReq = true;
     }
-    if (this.account.customer_id.password === "") {
-      this.passwordReq = true
+    if (this.account.customer_id.password === '') {
+      this.passwordReq = true;
     }
-    if (this.confirmPassword === "") {
-      this.confirmPasswordReq = true
+    if (this.confirmPassword === '') {
+      this.confirmPasswordReq = true;
     }
-
-
-    this.router.navigate(['customerRegistration']);
+    if (
+      this.firstNameReq ||
+      this.lastNameReq ||
+      this.address1Req ||
+      this.stateReq ||
+      this.cityReq ||
+      this.zipReq ||
+      this.phoneReq ||
+      this.emailReq ||
+      this.accountTypeReq ||
+      this.userNameReq ||
+      this.passwordReq ||
+      this.confirmPasswordReq ||
+      this.userNameValidate === 'invalid'
+    )
+      this.router.navigate(['customerRegistration']);
     console.log(this.account);
     this.customerRegistrationService
       .createCustomerRegistration(this.account)
-      .subscribe((data) => {
-        console.log(data);
+      .subscribe((data:any) => {
+        // console.log(data);
         if (data[0] === 'success')
-          this.router.navigateByUrl('registrationWaiting',{state:data})
-        else this.router.navigate(['customerRegistration']);
+          this.router.navigateByUrl('registrationWaiting', { state: data });
+        
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: data,
+        })
+        this.router.navigate(['customerRegistration']);
         this.account = new Account();
       });
   }
