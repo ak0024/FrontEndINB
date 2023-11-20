@@ -20,7 +20,11 @@
         <td>{{Bankslip.payerbank}}</td>
         <td>{{Bankslip.chequedate}}</td>
         <td>{{Bankslip.amount}}</td>
-        <td><button [hidden] ="!flag" >Claim</button></td>
-           
+        <td><button (click)= "message(Bankslip)" *ngIf="Bankslip.slipstatus==='Active'">Claim</button>
+            <div  *ngIf="Bankslip.slipstatus==='In progress'">{{Bankslip.slipstatus}}</div>
+            <div *ngIf="Bankslip.slipstatus==='Bounced'">{{Bankslip.slipstatus}}</div>
+            <div *ngIf="Bankslip.slipstatus==='Rejected'">{{Bankslip.slipstatus}}</div>
+        </td>
+        
     </tr>
 </table>
