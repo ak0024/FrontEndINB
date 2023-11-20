@@ -34,8 +34,8 @@ ngOnInit(): void{
     this.bankSlip.slipstatus="In progress"
     this.bankSlipServiceService.updateBankslip(this.bankSlip).subscribe(
       data=>{
-        console.log(data)
-        this.flag=true;
+        console.log(data);
+        this.flag=true
       }
     );
   }
