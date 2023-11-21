@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <th>Customer Id</th>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Customer Approve Action</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.customerId}}</td>
+        <td>{{customer.firstName}}  {{customer.lastName}}</td>
+        <td>{{customer.userName}}</td>
+        <td>{{customer.addressLine1}},<br>{{customer.addressLine2}},<br>{{customer.addressLine3}}</td>
+        <td>Phone:{{customer.phone}}<br>Email:{{customer.email}}</td>
+        <td>
+            <button style="background-color: green;" (click)="acceptCustomer(customer.customerId)">Accept</button>
+            <button style="background-color: red;" (click)="rejectCustomer(customer.customerId)">Reject</button>
+        </td>
+    </tr>
+</table>

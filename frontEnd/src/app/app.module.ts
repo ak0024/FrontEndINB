@@ -13,8 +13,9 @@ import { ForgotpasswordComponent } from './admin/forgotpassword/forgotpassword.c
 import { RegistrationWaitingComponent } from './customer/registration-waiting/registration-waiting.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { LogoutComponent } from './customer/logout/logout.component';
-import { NavBarComponent } from './customer/nav-bar/nav-bar.component';
 import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
+import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
+import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CustomerHomeComponent } from './customer/customer-home/customer-home.co
     RegistrationWaitingComponent,
     EditProfileComponent,
     LogoutComponent,
-    NavBarComponent
+    CustomerapprovalComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,

@@ -6,13 +6,16 @@
     </div><nav class="main-nav">
         <ul class="main-nav__items">
             <li class="main-nav__item main-nav__item__cta">
-                <a href="/{{admin.userName}}">Password count reset</a>
+                <a href="adminhome">Customer Approval</a>
+            </li>   
+            <li class="main-nav__item main-nav__item__cta">
+                <a href="adminhome/accountApprovel">Account Approval</a>
             </li>
             <li class="main-nav__item main-nav__item__cta">
-                <a href="new-request/{{admin.userName}}">Account Approval</a>
+                <a href="adminhome/passwordReachLimit">Password count reset</a>
             </li>
             <li class="main-nav__item main-nav__item__cta">
-                <a href="viewRequests">Bankslip Approval</a>
+                <a href="adminhome/bankSlipApproval">Bankslip Approval</a>
             </li>
             <li class="main-nav__item main-nav__item__cta">
                 <a href="adminlogin">Logout</a>
@@ -20,4 +23,6 @@
         </ul>
     </nav>
   </header>
-
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,25 @@
+table {
+ width: 100%;
+ text-align: center;
+  padding: 20px;
+}
+
+table, td, th {
+  border: 1px solid black;
+  
+}
+td {
+  text-align: center;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+button{
+  height: 40px;
+  width: 80px;
+  margin: 20px;
+  border-radius: 30px;
+ 
+}

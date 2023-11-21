@@ -507,3 +507,9 @@ border-radius: 4px;
     }
     }
     
+    .content-container {
+        /* Grow to fill available space */
+        /* margin-left: 250px; Adjust this value based on your nav container width */
+        padding: 20px; /* Add padding as needed */
+        /* background-color: black; */
+    }
