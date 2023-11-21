@@ -16,6 +16,8 @@ import { LogoutComponent } from './customer/logout/logout.component';
 import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
+import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
+import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CustomerViewComponent } from './customer/customer-view/customer-view.co
     EditProfileComponent,
     LogoutComponent,
     CustomerapprovalComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    AccountapprovalComponent,
+    PasswordReachLimitComponent
   ],
   imports: [
     BrowserModule,
