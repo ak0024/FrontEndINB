@@ -39,7 +39,8 @@ export class CustomerHomeComponent implements OnInit {
       .getAccountByCustomerId(this.customer.customerId)
       .subscribe((data) => {
         this.accounts = data;
-        sessionStorage.setItem("accounts",JSON.stringify(data))
+        console.log(this.accounts);
+        sessionStorage.setItem('accounts', JSON.stringify(data));
       });
   }
 
