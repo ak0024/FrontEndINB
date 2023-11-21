@@ -4,7 +4,10 @@
     /* background: #088395; */
     padding: auto;
     text-align: center;
+    position: relative;
 }
+
+
 /* Main CSS Here */
 
 @import url(
