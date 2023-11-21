@@ -1,10 +1,23 @@
-
-
 <div class="background-image"></div>
-<div class="main-header">
+<header class="main-header">
+  <div>
+      <a class="main-header__brand">
+          iNB
+      </a>
+  </div><nav class="main-nav">
+      <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item__cta">
+              <a href="adminlogin">Admin Login</a>
+          </li>
+      </ul>
+  </nav>
+</header>
+<!-- <div class="main-header">
+  <a>iNB</a>
+  <br>
 <button type="submit"  class="button2 " (click)="goToAdmin()"> &nbsp; Admin Login &nbsp;</button><br>
 <br>
-</div>
+</div> -->
 <div class="login">
 <form (ngSubmit)="login()">
     <h1>Login</h1>
