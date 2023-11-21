@@ -10,7 +10,7 @@
 }
 
 .card {
-    width: 200px; /* Set the width of each card as needed */
+    width: 220px; /* Set the width of each card as needed */
     margin-right: 10px; /* Adjust the margin between cards */
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -34,6 +34,13 @@
 .card-content {
     padding: 15px;
     background-color: #ddd;
+}
+button{
+    border-radius: 20px;
+    height: 25px;
+    width: 90px;
+    cursor: pointer;
+
 }
 
 
