@@ -95,16 +95,7 @@ export class CustomerRegistrationComponent implements OnInit {
     }
   }
 
-  //validatePassword() {
-  // var password = document.getElementById("password").value;
-  // var confirmPassword = document.getElementById("confirmPassword").value;
 
-  // if (password !== confirmPassword) {
-  //   document.getElementById("message").innerHTML = "Passwords do not match!";
-  // } else {
-  //   document.getElementById("message").innerHTML = "";
-  // }
-  // }
 
   register() {
     if (this.account.customer_id.firstName === '') {

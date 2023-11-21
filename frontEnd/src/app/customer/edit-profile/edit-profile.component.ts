@@ -36,6 +36,7 @@ export class EditProfileComponent implements OnInit{
 
   ngOnInit(): void {
     this.customerId = this.activatedRouter.snapshot.params['customerId'];
+    this.customer=JSON.parse(sessionStorage.getItem("customer")||'{}')
     // this.customerService.getCustomerbyCustomerId(this.customerId).subscribe(
     //   data => {
     //     this.customer = data;
