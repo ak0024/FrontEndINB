@@ -1,5 +1,5 @@
 button {
-    background-color: rgb(25, 0, 255);
+    background-color:  skyblue;
     color: white;
     font-size: 16px;
     padding: 10px 20px;
@@ -8,7 +8,7 @@ button {
     cursor: pointer;   
   }
 button:hover, .button:active{
-    background-color: white;
+    background-color:#2516a5 ;
     color: black;
   }
   #Bankslip{
@@ -43,12 +43,12 @@ button:hover, .button:active{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(59, 59, 59);
     color: white;
   }
-h1{
-        text-align: center;
-        background-color: black;
-        color: white;
-        font-family: inherit;
+h1{   
+    text-align: center;
+    background-color:#088395;
+    color: white;
+    font-family: inherit;
      }
