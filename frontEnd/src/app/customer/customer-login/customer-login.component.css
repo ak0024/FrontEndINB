@@ -1,4 +1,77 @@
-h1{
+.main-header{
+    width: 100%;
+    background-color: #088395;
+    padding: 8px 16px;
+  } 
+  
+  main{
+    margin: 0;
+  }
+  .main-header__brand{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: x-large;
+    color: #99dbdd;
+    margin-left: -225px;
+  }
+  
+  .main-nav{
+    width: 75%;
+    text-align: right;
+    
+  }
+  
+  .main-nav__items{
+    margin: 0;
+    list-style: none;
+    margin-right: -150px;
+    
+    
+  }
+  
+  .main-header div , .main-nav{
+    display: inline-block;
+    
+  }
+  
+  .main-nav__item{
+    display: inline-block;
+    padding: 10px;
+    
+  }
+  .main-nav__items a{
+    text-decoration: none;
+    color:  #0e4f1f;
+    font-weight: bold;
+    
+  }
+  .main-nav__item__cta a{
+    color: black;
+    background-color: skyblue;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+  }
+  .main-nav__items a:hover,
+  .main-nav__items a:active{
+    background-color: darkblue;
+    color:white;
+  }
+  
+  
+  
+  .main-nav__item__cta a:active,
+  .main-nav__item__cta a:hover{
+    background-color: darkblue;
+    color: white;
+    border: none;
+  }
+  
+  .content{
+    text-align: center;
+  }
+/* h1{
     text-align: center;
 }
 p{
@@ -13,14 +86,14 @@ a{
     width: 100%;
     margin-top:0px;
     background: #088395;
-    /* padding: auto; */
+    padding: auto;
     text-align: left;
     text-decoration: none;
     
 }
 .main-header > div{
     display: inline-block;
-}
+} */
 .login{
     background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */

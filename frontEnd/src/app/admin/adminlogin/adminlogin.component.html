@@ -1,11 +1,24 @@
-
 <header class="main-header">
-  <a href="#">iNB</a>
+  <div>
+      <a class="main-header__brand">
+          iNB
+      </a>
+  </div><nav class="main-nav">
+      <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item__cta">
+              <a href="#">Customer Login</a>
+          </li>
+      </ul>
+  </nav>
+</header>
+<!-- 
+<header class="main-header">
+  <a>iNB</a>
     <div class="login">
       <button type="submit"  (click)="goToCustomer()" class="button2"> Customer Login</button><br>
       <br>
       </div>
-</header>
+</header> -->
 <div class="adminlogin">
 <form (ngSubmit)="adminLogin()">  
     <h1>Admin Login</h1>

@@ -10,6 +10,7 @@ export class IssueBankSlipComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

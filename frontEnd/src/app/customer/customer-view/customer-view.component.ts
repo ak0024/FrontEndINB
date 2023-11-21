@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
 import { Account } from 'src/app/Domain/account';
 import { CustomerServicesService } from 'src/app/Service/customer-services.service';
@@ -11,7 +12,8 @@ import { CustomerServicesService } from 'src/app/Service/customer-services.servi
 export class CustomerViewComponent implements OnInit {
   customer: Customer = new Customer();
   accounts: Account[] = [];
-  constructor(private customerservice: CustomerServicesService) { }
+  constructor(private customerservice: CustomerServicesService,
+    private router: Router) { }
 
   ngOnInit() {
     this.customer = JSON.parse(sessionStorage.getItem('customer') || '{}');
@@ -26,5 +28,9 @@ export class CustomerViewComponent implements OnInit {
     console.log(this.accounts)
     
   }
+  toSendMoney(item:Account){
+    this.router.navigate(['customerHome/send-money/'+item.account_id])
+          
+    }
 
 }
