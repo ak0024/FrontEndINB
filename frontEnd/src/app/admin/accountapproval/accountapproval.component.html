@@ -1,1 +1,23 @@
-account Approval
+<table>
+    <tr>
+        <th>Account Id</th>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Account type</th>
+        <th>Account Approve Action</th>
+    </tr>
+    <tr *ngFor="let account of accounts">
+        <td>{{account.account_id}}</td>
+        <td>{{account.customer_id.firstName}}  {{account.customer_id.lastName}}</td>
+        <td>{{account.customer_id.userName}}</td>
+        <td>{{account.customer_id.addressLine1}},<br>{{account.customer_id.addressLine2}},<br>{{account.customer_id.addressLine3}}</td>
+        <td>Phone:{{account.customer_id.phone}}<br>Email:{{account.customer_id.email}}</td>
+        <td>{{account.account_type}}</td>
+        <td>
+            <button style="background-color: green;" (click)="acceptAccount(account.account_id)">Accept</button>
+            <button style="background-color: red;" (click)="rejectAccount(account.account_id)">Reject</button>
+        </td>
+    </tr>
+</table>

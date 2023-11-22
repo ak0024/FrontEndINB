@@ -17,13 +17,15 @@ import { CustomerViewComponent } from './customer/customer-view/customer-view.co
 import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
 import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
+import { SendMoneyComponent } from './customer/send-money/send-money.component';
 
 const routes: Routes = [
   {path: "", component: CustomerLoginComponent},
   {path:"customerHome",component:CustomerHomeComponent,children:[
     {path:"",component:CustomerViewComponent},
     {path:"editprofile",component:EditProfileComponent},
-    {path:"transactions",component:CustomerTransactionComponent}
+    {path:"transactions",component:CustomerTransactionComponent},
+    {path:"send-money/:accountId", component:SendMoneyComponent}
   ]},
   {path:"editprofile", component: EditProfileComponent},  
   {path:"claimbankslip",component:ClaimBankslipComponent},

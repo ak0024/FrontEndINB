@@ -1,0 +1,17 @@
+<div class="head">
+  <h1 >Money transfer</h1><br>
+</div>
+<form >
+<table>
+  <tr><td>From account:</td>
+  <td><input type="text" [(ngModel)]="transaction.fromAccount.account_id" name="fromAccount"></td></tr>
+  <tr><td>To account:</td>
+    <td><input type="text" [(ngModel)]="transaction.toAccount.account_id" name="toAccount"></td></tr>
+    <tr><td>Amount:</td>
+      <td><input type="number" [(ngModel)]="transaction.amount" name="amount"></td></tr>
+    <tr>
+      <td></td>
+      <td><button type="button" (click)="sendMoney(transaction)">Send money</button></td>
+    </tr>
+</table>
+</form> 

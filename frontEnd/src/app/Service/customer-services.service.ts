@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Customer } from '../Domain/Customer';
 import { Account } from '../Domain/account';
+import { Transaction } from '../Domain/Transaction';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,8 @@ export class CustomerServicesService {
   getAccountByCustomerId(customerId:string):Observable<Account[]>{
     return this.httpClient.get<Account[]>("http://localhost:8082/accountapi/accounts/customer/"+customerId);
   
+  }
+  sendMoney(transaction:Transaction):Observable<boolean[]>{
+    return this.httpClient.post<boolean[]>("http://localhost:8082/transactionapi/sendMoney",transaction);
   }
 }

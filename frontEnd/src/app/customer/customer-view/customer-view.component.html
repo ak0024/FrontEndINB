@@ -3,8 +3,9 @@
     <div class="color">
       {{ item.account_id }}<br />({{ item.account_type }})
     </div>
-    <input type="{{ hidePassword ? 'password' : 'text' }}" id="password" class="password-input" name="password" [(ngModel)]="item.current_balance">
-  <button (click)="togglePassword()">{{ hidePassword ? 'Show' : 'Hide' }}</button>
-    
+    <div class="card-content">
+      <h3>&#8377; {{ item.current_balance }}</h3>
+    <button (click)="toSendMoney(item)">Send Money</button> &nbsp;<button>Statements</button>
+    </div>
   </div>
 </div>
