@@ -26,5 +26,15 @@ export class CustomerViewComponent implements OnInit {
     console.log(this.accounts)
     
   }
+  
+  hidePassword: boolean = true;
+  togglePassword(): void {
+    this.hidePassword = !this.hidePassword;
+  }
 
+  
 }
+  
+
+
+

@@ -31,10 +31,19 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.card-content {
-    padding: 15px;
-    background-color: #ddd;
-}
-
-
-
+.fa-eye-slash {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .balance {
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 30px;
+  }
+  
+  .balance-hidden {
+    visibility: hidden;
+  }

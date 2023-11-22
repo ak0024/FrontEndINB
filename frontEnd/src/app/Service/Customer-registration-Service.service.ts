@@ -1,3 +1,5 @@
+
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CustomerRegistrationComponent } from '../customer/customer-registration/customer-registration.component';
@@ -15,5 +17,6 @@ createCustomerRegistration(account: Account): Observable<String>{
   console.log(account)
   return this.httpClient.post<String>('http://localhost:8082/accountapi/newAccount', account)
 }
+
 
 }
