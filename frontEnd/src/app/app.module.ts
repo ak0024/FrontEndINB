@@ -20,7 +20,6 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
 import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
-import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { CustomerbankslipComponent } from './customer/customerbankslip/customerb
     AccountapprovalComponent,
     BankSlipApprovalComponent,
     PasswordReachLimitComponent,
-    CustomerbankslipComponent
   ],
   imports: [
     BrowserModule,

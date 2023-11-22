@@ -9,6 +9,9 @@ import { Transaction } from '../Domain/Transaction';
   providedIn: 'root'
 })
 export class CustomerServicesService {
+  next(updateCustomer: () => void) {
+    throw new Error('Method not implemented.');
+  }
 
   
 
