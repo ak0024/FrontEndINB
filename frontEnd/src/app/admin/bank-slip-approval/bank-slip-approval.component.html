@@ -1,3 +1,28 @@
-<p>
-  bank-slip-approval works!
-</p>
+<table>
+  <tr>
+    <th>Chequeno</th>
+    <th>Accountid</th>
+    <th>Slipdate</th>
+    <th>Payer Accountid</th>
+    <th>Payer bank</th>
+    <th>chequedate</th>
+    <th>amount</th>
+    <th>Payer Balance</th>
+    <th>action</th>
+</tr>
+<tr *ngFor="let bankslip of bankslips">
+    <td>{{bankslip.chequeno}}</td>
+    <td>{{bankslip.accountid.account_id}}</td>
+    <td>{{bankslip.slipdate}}</td>
+    <td>{{bankslip.payeraccountid.account_id}}</td>
+    <td>{{bankslip.payerbank}}</td>
+    <td>{{bankslip.chequedate}}</td>
+    <td>{{bankslip.amount}}</td>
+    <td>{{bankslip.payeraccountid.current_balance}}</td>
+      <td>
+          <button style="background-color: green;" (click)="acceptBankslip(bankslip.chequeno)">Accept</button>
+          <button style="background-color: red;" (click)="rejectBankslip(bankslip.chequeno)">Reject</button>
+          <button style="background-color: red;" (click)="bounceBankslip(bankslip.chequeno)">Bounce</button>
+      </td>
+  </tr>
+</table>

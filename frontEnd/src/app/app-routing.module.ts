@@ -18,30 +18,42 @@ import { CustomerTransactionComponent } from './customer/customer-transaction/cu
 import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 import { SendMoneyComponent } from './customer/send-money/send-money.component';
+import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 
 const routes: Routes = [
-  {path: "", component: CustomerLoginComponent},
-  {path:"customerHome",component:CustomerHomeComponent,children:[
-    {path:"",component:CustomerViewComponent},
-    {path:"editprofile",component:EditProfileComponent},
-    {path:"transactions",component:CustomerTransactionComponent},
-    {path:"send-money/:accountId", component:SendMoneyComponent}
-  ]},
-  {path:"editprofile", component: EditProfileComponent},  
-  {path:"claimbankslip",component:ClaimBankslipComponent},
-  {path:"adminlogin", component:AdminloginComponent},
-  {path:"adminhome", component:AdminhomeComponent,children:[
-    {path:"",component:CustomerapprovalComponent},
-    {path:"accountApprovel",component:AccountapprovalComponent},
-    {path:"passwordReachLimit",component:PasswordReachLimitComponent},
-    {path:"bankSlipApproval",component:BankSlipApprovalComponent}
+  { path: "", component: CustomerLoginComponent },
+  {
+    path: "customerHome", component: CustomerHomeComponent, children: [
+      { path: "", component: CustomerViewComponent },
+      { path: "editprofile", component: EditProfileComponent },
+      { path: "transactions", component: CustomerTransactionComponent },
+      { path: "send-money/:accountId", component: SendMoneyComponent },
+      {
+        path: "bankslip", component: CustomerbankslipComponent, children: [
+          { path: "", component: ClaimBankslipComponent },
+          { path: "issuebankslip", component: IssueBankSlipComponent }
+        ]
 
-  ]},
-  {path:"issueBankSlip",component:IssueBankSlipComponent},
-  {path:"customerRegistration",component:CustomerRegistrationComponent},
-  {path:"forgotAdminPassword", component:ForgotpasswordComponent},
-  {path:"registrationWaiting", component:RegistrationWaitingComponent},
-  {path:"logout", component: LogoutComponent}
+      }
+    ]
+  },
+  { path: "editprofile", component: EditProfileComponent },
+  { path: "claimbankslip", component: ClaimBankslipComponent },
+  { path: "adminlogin", component: AdminloginComponent },
+  {
+    path: "adminhome", component: AdminhomeComponent, children: [
+      { path: "", component: CustomerapprovalComponent },
+      { path: "accountApprovel", component: AccountapprovalComponent },
+      { path: "passwordReachLimit", component: PasswordReachLimitComponent },
+      { path: "bankSlipApproval", component: BankSlipApprovalComponent }
+
+    ]
+  },
+  { path: "issueBankSlip", component: IssueBankSlipComponent },
+  { path: "customerRegistration", component: CustomerRegistrationComponent },
+  { path: "forgotAdminPassword", component: ForgotpasswordComponent },
+  { path: "registrationWaiting", component: RegistrationWaitingComponent },
+  { path: "logout", component: LogoutComponent }
 ];
 
 @NgModule({
@@ -49,6 +61,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  
+
 }
-  
