@@ -16,6 +16,10 @@ import { LogoutComponent } from './customer/logout/logout.component';
 import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
+import { SendMoneyComponent } from './customer/send-money/send-money.component';
+import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
+import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
+import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { CustomerViewComponent } from './customer/customer-view/customer-view.co
     EditProfileComponent,
     LogoutComponent,
     CustomerapprovalComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    SendMoneyComponent,
+    AccountapprovalComponent,
+    BankSlipApprovalComponent,
+    PasswordReachLimitComponent,
   ],
   imports: [
     BrowserModule,
