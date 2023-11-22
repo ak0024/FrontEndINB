@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BankslipServiceService } from 'src/app/Service/bankslip-service.service';
 import { BankSlip } from 'src/app/Domain/BankSlip';
+import { Account } from 'src/app/Domain/account';
 
 @Component({
   selector: 'app-claim-bankslip',
@@ -12,18 +13,21 @@ import { BankSlip } from 'src/app/Domain/BankSlip';
 })
 export class ClaimBankslipComponent implements OnInit {
   claimbankslip: BankSlip[] = [];
+  accounts:Account[]=[];
   bankSlip: BankSlip = new BankSlip();
   flag: boolean = false;
+  accountid:string=""
   
 
   constructor(private bankSlipServiceService: BankslipServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.reloadBankSlip();
+    
+    this.accounts=JSON.parse(sessionStorage.getItem("accounts")|| '{}')
 
   }
   reloadBankSlip() {
-    this.bankSlipServiceService.claimbankslip().subscribe(
+    this.bankSlipServiceService.claimbankslip(this.accountid).subscribe(
       data => {
         this.claimbankslip = data;
         console.log(data);
@@ -39,5 +43,9 @@ export class ClaimBankslipComponent implements OnInit {
         this.flag = true;
       }
     );
+  }
+  onaccountChange(event:Event){
+    this.accountid=(event.target as HTMLSelectElement).value;
+    this.reloadBankSlip();
   }
 }
