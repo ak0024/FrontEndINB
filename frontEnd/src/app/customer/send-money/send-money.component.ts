@@ -11,6 +11,7 @@ import { CustomerServicesService } from 'src/app/Service/customer-services.servi
 export class SendMoneyComponent implements OnInit {
   transaction:Transaction=new Transaction()
   accountId:String=""
+  message:string=""
   constructor(private router :Router, private activated:ActivatedRoute
     ,private customerService:CustomerServicesService) { }
 
@@ -25,6 +26,7 @@ console.log(transaction);
 this.customerService.sendMoney(transaction).subscribe(
   data=>{
     console.log(data)
+    this.message=data[1]
   }
 )
 
