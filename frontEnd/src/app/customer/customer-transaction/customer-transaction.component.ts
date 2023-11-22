@@ -10,6 +10,7 @@ export class CustomerTransactionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
