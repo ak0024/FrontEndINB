@@ -27,7 +27,7 @@ constructor(private adminServie: AdminApprovalService){
   }
 
   acceptAccount(accountId:string){
-    this.adminServie.acceptCustomer(accountId).subscribe(
+    this.adminServie.acceptAccount(accountId).subscribe(
       data=>{
         if(data){
           this.onReload()
