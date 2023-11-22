@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Customer } from '../Domain/Customer';
 import { HttpClient } from '@angular/common/http';
 import { Account } from '../Domain/account';
+import { BankSlip } from '../Domain/BankSlip';
 
 @Injectable({
   providedIn: 'root'
@@ -42,4 +43,19 @@ export class AdminApprovalService {
   resetPasswordCount(customerId:String):Observable<boolean>{
     return this.httpClient.get<boolean>("http://localhost:8082/adminapi/resetPasswordCount/"+customerId);
   }
+
+  claimedBankslip():Observable<BankSlip[]>{
+    return this.httpClient.get<BankSlip[]>("http://localhost:8082/adminapi/bankslipApproval");
+  }
+  acceptBankslip(chequeno:string):Observable<boolean>{
+    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/acceptBankslip/"+chequeno);
+  }
+  rejectBankslip(chequeno:string):Observable<boolean>{
+    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/rejectBankslip/"+chequeno);
+  }
+  bounceBankslip(chequeno:string):Observable<boolean>{
+    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/bounceBankslip/"+chequeno);
+  }
+
 }
+
