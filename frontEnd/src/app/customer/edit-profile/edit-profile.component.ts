@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
 import { CustomerServicesService } from 'src/app/Service/customer-services.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class EditProfileComponent implements OnInit{
 
   }
 
-  
+
 
   ngOnInit(): void {
     this.customerId = this.activatedRouter.snapshot.params['customerId'];
@@ -45,6 +46,7 @@ export class EditProfileComponent implements OnInit{
         
     //   }
     // );
+    
   }
 
   updateCustomer(){
@@ -55,9 +57,18 @@ export class EditProfileComponent implements OnInit{
         
       }
     );
+    setTimeout(() => {
+      alert('Profile updated successfully!');
+      location.reload(); 
+    }, 2000);
+   
   }
 
   goToHome(){
     this.router.navigate(['']);
   }
+
+
+
+
 }

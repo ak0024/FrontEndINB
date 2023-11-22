@@ -1,0 +1,138 @@
+.background{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+ 
+  top: 100%;
+  left: 100%;
+  width: 100%;
+  margin-left: 100px;
+  /* position: absolute;
+  
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  */
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 20px;
+  
+}
+h1{
+    text-align: center;
+}
+
+.my-button {
+    background-color: rgb(25, 0, 255);
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 600px;
+    
+    
+  }
+
+.personel{
+  border: 3px solid black;
+
+}
+table{
+  width: 100%;
+ padding: 20px;
+  border: 1px solid;
+  margin-bottom: 20px
+  
+}
+
+td{
+  text-align: center;
+  width: 50%;
+  font-size: large;
+ 
+}
+.my-button:hover, .my-button:active{
+    background-color: white;
+    color: black;
+  }
+
+.registration{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+   text-align: center;
+    top: 50%;
+    left: 70%;
+    width: 80%;
+    margin: auto;
+    /* position: absolute;
+    
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    */
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
+    font-family: inherit;
+    text-align: center;
+    
+
+}
+
+input,select{
+    height: 25px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+
+label{
+  font-size: larger;
+}
+
+.head{
+    text-align: center;
+    background-color:#088395;
+    color: white;
+    font-family: inherit;
+}
+
+.edit{
+    text-align: center;
+}
+*{
+    box-sizing: border-box;
+}
+.button{
+    background-color: skyblue;
+    padding: 8px;
+    border-radius: 31px;
+    border: 2px solid black;
+    color: black;
+    border-style: none;
+    box-shadow: none;
+    font-weight: bold;
+    font:inherit;
+    cursor: pointer;
+    text-align: center;
+}
+.button:hover, .button:active{
+    background-color: darkblue;
+    color:white;
+}
+body, html {
+    max-width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
