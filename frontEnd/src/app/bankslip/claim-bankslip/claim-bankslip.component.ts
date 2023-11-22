@@ -22,7 +22,7 @@ export class ClaimBankslipComponent implements OnInit {
   constructor(private bankSlipServiceService: BankslipServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.reloadBankSlip();
+    
     this.accounts=JSON.parse(sessionStorage.getItem("accounts")|| '{}')
 
   }
