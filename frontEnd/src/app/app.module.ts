@@ -17,6 +17,7 @@ import { CustomerHomeComponent } from './customer/customer-home/customer-home.co
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
 import { SendMoneyComponent } from './customer/send-money/send-money.component';
+import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
     LogoutComponent,
     CustomerapprovalComponent,
     CustomerViewComponent,
-    SendMoneyComponent
+    SendMoneyComponent,
+    CustomerbankslipComponent
   ],
   imports: [
     BrowserModule,
