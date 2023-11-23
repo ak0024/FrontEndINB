@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Transaction } from 'src/app/Domain/Transaction';
+import { Account } from 'src/app/Domain/account';
 import { TransactionService } from 'src/app/Service/transaction.service';
 
 @Component({
@@ -10,11 +11,14 @@ import { TransactionService } from 'src/app/Service/transaction.service';
 })
 export class CustomerTransactionComponent implements OnInit {
   transaction:Transaction[]=[];
-  accountId:string="ACC151"
+  accountId:string=""
+  accounts:Account[]=[]
   constructor(private router: Router,private transactionservice : TransactionService) { }
 
   ngOnInit(): void {
-    this.reloadtransaction();
+
+    this.accounts=JSON.parse(sessionStorage.getItem("accounts")|| '{}')
+
 
   }
   reloadtransaction() {
@@ -22,9 +26,22 @@ export class CustomerTransactionComponent implements OnInit {
     this.transactionservice.transaction(this.accountId).subscribe(
       data => {
         this.transaction= data;
+        const sortedTransactions = this.transaction.sort((a, b) => {
+          const dateA:any = new Date(a.dateAndTime);
+          const dateB:any = new Date(b.dateAndTime);
+        
+          return dateB - dateA;
+        });
         console.log(data);
+        console.log(sortedTransactions)
       }
     )
+  }
+
+  
+  onaccountChange(event:Event){
+    this.accountId=(event.target as HTMLSelectElement).value;
+    this.reloadtransaction()
   }
   
 
