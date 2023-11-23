@@ -21,6 +21,7 @@ import { CustomerbankslipComponent } from './customer/customerbankslip/customerb
 import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
+import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 
 
 @NgModule({
@@ -40,10 +41,11 @@ import { PasswordReachLimitComponent } from './admin/password-reach-limit/passwo
     CustomerapprovalComponent,
     CustomerViewComponent,
     SendMoneyComponent,
-    CustomerbankslipComponent
+    CustomerbankslipComponent, 
     AccountapprovalComponent,
     BankSlipApprovalComponent,
-    PasswordReachLimitComponent
+    PasswordReachLimitComponent,
+    IssueBankSlipComponent
   ],
   imports: [
     BrowserModule,
