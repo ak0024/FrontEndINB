@@ -1,6 +1,10 @@
 <div class="head">
   <h1 >Transaction</h1><br>
 </div>
+<select (change)="onaccountChange($event)"> 
+  <option value="">select account</option>
+  <option *ngFor="let account of accounts">{{account.account_id}}</option>
+</select>
 <table border="1" id="transaction">
   <tr>
     <th>Transactionid</th>
@@ -10,12 +14,15 @@
     <th>Amount</th>
    
 </tr>
-<tr *ngFor="let Transaction of transaction">
+<tr *ngFor="let Transaction of transaction" >
+  
   <td>{{Transaction.transactionId}}</td>
   <td>{{Transaction.dateAndTime}}</td>
   <td>{{Transaction.transactionType}}</td>
   <td>{{Transaction.transactionStatus}}</td>
-  <td *ngIf="Transaction.fromAccount.account_id=='ACC151'" style="color: red;">-{{Transaction.amount}}</td>
-  <td *ngIf="Transaction.toAccount.account_id=='ACC151'" style="color: green;">+{{Transaction.amount}}</td>
+  <td *ngIf="Transaction.fromAccount.account_id===accountId && Transaction.transactionStatus==='Success'" style="color: red;">-{{Transaction.amount}}</td>
+  <td *ngIf="Transaction.toAccount.account_id==accountId && Transaction.transactionStatus==='Success'" style="color: green;">+{{Transaction.amount}}</td>
+  <td *ngIf="Transaction.toAccount.account_id==accountId && Transaction.transactionStatus==='Failed'" style="color: orange;">{{Transaction.amount}}</td>
+  <td *ngIf="Transaction.fromAccount.account_id==accountId && Transaction.transactionStatus==='Failed'" style="color: orange;">{{Transaction.amount}}</td>
 </tr>
 </table>
