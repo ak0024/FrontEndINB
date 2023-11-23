@@ -1,8 +1,8 @@
 #transaction{
     text-align: center;
     background-color: (0,0,0);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgb(233, 233, 233);
+    
+    color: black;
     width: auto; 
     padding: 30px;
     margin: auto;
@@ -11,5 +11,14 @@
     font-size: larger;
     background-size: cover; 
     box-sizing: border-box;
-     
+    border-radius: 30px;
+}
+
+tr{
+    border-radius: 30px;
+}
+
+th{
+    background-color: #551A8B;
+    color: white;
 }
