@@ -20,6 +20,7 @@ import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip
 import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 import { SendMoneyComponent } from './customer/send-money/send-money.component';
+import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
     IssueBankSlipComponent,
     CustomerTransactionComponent,
     CustomerbankslipComponent,
-    SendMoneyComponent
+    SendMoneyComponent,
+    BankSlipApprovalComponent
   ],
   imports: [
     BrowserModule,

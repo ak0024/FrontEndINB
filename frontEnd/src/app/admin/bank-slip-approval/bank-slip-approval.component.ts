@@ -17,6 +17,17 @@ bankslips:BankSlip[]=[];
     this.onReload();
   }
 
+  isNextThreeMonthsBeforeToday(date:string): boolean {
+    const dateObject = new Date(date);
+    dateObject.setMonth(dateObject.getMonth()+3)
+    console.log(dateObject.getMonth());
+    
+    
+    const today = new Date();
+    console.log(date,today);
+    
+    return today < dateObject;
+  }
   onReload() {
     this.adminServie.claimedBankslip().subscribe((data) => {
       this.bankslips = data;
