@@ -19,13 +19,16 @@ import { CustomerViewComponent } from './customer/customer-view/customer-view.co
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
-import { SendMoneyComponent } from './customer/send-money/send-money.component';
+import { AccountapprovalComponent } from './admin/accountapproval/accountapproval.component';
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
+import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
+import { SendMoneyComponent } from './customer/send-money/send-money.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    // AppRoutingModule,
+    //AppRoutingModule,
     CustomerLoginComponent,
     CustomerHomeComponent,
     AdminloginComponent,
@@ -38,11 +41,15 @@ import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-
     LogoutComponent,
     CustomerapprovalComponent,
     CustomerViewComponent,
-    IssueBankSlipComponent,
-    CustomerTransactionComponent,
+    SendMoneyComponent,
     CustomerbankslipComponent,
     SendMoneyComponent,
-    BankSlipApprovalComponent
+    BankSlipApprovalComponent,
+    AccountapprovalComponent,
+    BankSlipApprovalComponent,
+    PasswordReachLimitComponent,
+    IssueBankSlipComponent,
+    CustomerTransactionComponent
   ],
   imports: [
     BrowserModule,
