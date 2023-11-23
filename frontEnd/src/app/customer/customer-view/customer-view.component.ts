@@ -12,6 +12,7 @@ import { CustomerServicesService } from 'src/app/Service/customer-services.servi
 export class CustomerViewComponent implements OnInit {
   customer: Customer = new Customer();
   accounts: Account[] = [];
+  showPassword: boolean = false;
   constructor(private customerservice: CustomerServicesService,
     private router: Router) { }
 
@@ -31,6 +32,10 @@ export class CustomerViewComponent implements OnInit {
   toSendMoney(item:Account){
     this.router.navigate(['customerHome/send-money/'+item.account_id])
           
+    }
+
+    togglePassword() {
+      this.showPassword = !this.showPassword;
     }
 
 }

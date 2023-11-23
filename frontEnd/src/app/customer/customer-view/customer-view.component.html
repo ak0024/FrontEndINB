@@ -4,8 +4,8 @@
       {{ item.account_id }}<br />({{ item.account_type }})
     </div>
     <div class="card-content">
-      <h3>&#8377; {{ item.current_balance }}</h3>
-    <button (click)="toSendMoney(item)">Send Money</button> &nbsp;<button>Statements</button>
+      <h3>&#8377; <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="item.current_balance" readonly/><i class="bi bi-eye-fill" *ngIf="!showPassword"  (click)="togglePassword()"></i><i *ngIf="showPassword"  (click)="togglePassword()" class="bi bi-eye-slash-fill"></i></h3>
+    <button (click)="toSendMoney(item)">Send Money</button>
     </div>
   </div>
 </div>

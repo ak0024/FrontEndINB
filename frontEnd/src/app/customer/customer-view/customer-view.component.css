@@ -43,5 +43,11 @@ button{
 
 }
 
+input{
+    border: none;
+    background-color: transparent;
+    width: 40px;
+}
+
 
 
