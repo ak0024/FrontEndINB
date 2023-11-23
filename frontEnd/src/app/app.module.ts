@@ -16,8 +16,6 @@ import { LogoutComponent } from './customer/logout/logout.component';
 import { CustomerHomeComponent } from './customer/customer-home/customer-home.component';
 import { CustomerapprovalComponent } from './admin/customerapproval/customerapproval.component';
 import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
-import { SendMoneyComponent } from './customer/send-money/send-money.component';
-import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +32,7 @@ import { CustomerbankslipComponent } from './customer/customerbankslip/customerb
     EditProfileComponent,
     LogoutComponent,
     CustomerapprovalComponent,
-    CustomerViewComponent,
-    SendMoneyComponent,
-    CustomerbankslipComponent
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,
