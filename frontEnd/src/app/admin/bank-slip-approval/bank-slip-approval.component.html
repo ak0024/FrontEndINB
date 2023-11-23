@@ -20,9 +20,9 @@
     <td>{{bankslip.amount}}</td>
     <td>{{bankslip.payeraccountid.current_balance}}</td>
       <td>
-          <button style="background-color: green;" (click)="acceptBankslip(bankslip.chequeno)">Accept</button>
+          <button *ngIf="bankslip.payeraccountid.current_balance>=bankslip.amount" [hidden]="flag" style="background-color: green;" (click)="acceptBankslip(bankslip.chequeno)">Accept</button>
           <button style="background-color: red;" (click)="rejectBankslip(bankslip.chequeno)">Reject</button>
-          <button style="background-color: red;" (click)="bounceBankslip(bankslip.chequeno)">Bounce</button>
+          <button *ngIf="bankslip.payeraccountid.current_balance<=bankslip.amount"[hidden]="flag" style="background-color: orange;" (click)="bounceBankslip(bankslip.chequeno)">Bounce</button>
       </td>
   </tr>
 </table>

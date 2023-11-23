@@ -10,7 +10,9 @@ import { AdminApprovalService } from 'src/app/Service/admin-approval.service';
 })
 export class BankSlipApprovalComponent implements OnInit {
 admin:Admin = new Admin();
+bankslip:BankSlip= new BankSlip;
 bankslips:BankSlip[]=[];
+flag:boolean=false;
   constructor(private adminServie: AdminApprovalService) { }
 
   ngOnInit() {
@@ -28,7 +30,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.acceptBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data;
+          this.onReload();
         }
       }
     )
@@ -39,7 +42,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.rejectBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data; 
+          this.onReload();
         }
       }
     )
@@ -48,7 +52,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.bounceBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data;
+          this.onReload();
         }
       }
     )
