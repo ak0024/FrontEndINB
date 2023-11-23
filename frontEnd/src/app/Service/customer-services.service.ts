@@ -9,6 +9,9 @@ import { Transaction } from '../Domain/Transaction';
   providedIn: 'root'
 })
 export class CustomerServicesService {
+  next(updateCustomer: () => void) {
+    throw new Error('Method not implemented.');
+  }
 
   
 
@@ -31,7 +34,7 @@ export class CustomerServicesService {
     return this.httpClient.get<Account[]>("http://localhost:8082/accountapi/accounts/customer/"+customerId);
   
   }
-  sendMoney(transaction:Transaction):Observable<boolean[]>{
-    return this.httpClient.post<boolean[]>("http://localhost:8082/transactionapi/sendMoney",transaction);
+  sendMoney(transaction:Transaction):Observable<string[]>{
+    return this.httpClient.post<string[]>("http://localhost:8082/transactionapi/sendMoney",transaction);
   }
 }

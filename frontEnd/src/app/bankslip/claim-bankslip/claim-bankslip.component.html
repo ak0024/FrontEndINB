@@ -1,6 +1,9 @@
 
 <h1>CLAIM BANKSLIP</h1>
-<div [hidden]="flag"></div>
+ <select (change)="onaccountChange($event)"> 
+    <option value="">select account</option>
+    <option *ngFor="let account of accounts">{{account.account_id}}</option>
+</select>
 <table border="1" id="Bankslip">
     <tr>
         <th>Chequeno</th>

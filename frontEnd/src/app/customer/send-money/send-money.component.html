@@ -11,7 +11,8 @@
       <td><input type="number" [(ngModel)]="transaction.amount" name="amount"></td></tr>
     <tr>
       <td></td>
-      <td><button type="button" (click)="sendMoney(transaction)">Send money</button></td>
+      <td><p *ngIf="message!=''">{{message}}</p><br><button type="button" (click)="sendMoney(transaction)">Send money</button></td>
     </tr>
 </table>
+
 </form> 
