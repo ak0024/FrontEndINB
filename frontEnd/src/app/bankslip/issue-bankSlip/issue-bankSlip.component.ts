@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Account } from 'src/app/Domain/account';
+import { BankslipServiceService } from 'src/app/Service/bankslip-service.service';
 
 @Component({
   selector: 'app-issue-bankSlip',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssueBankSlipComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router,private bankSlipServiceService: BankslipServiceService) { }
+  accounts:Account[]=[];
+  accountid:string=""
+  
   ngOnInit() {
+    this.accounts=JSON.parse(sessionStorage.getItem("accounts")|| '{}')
+  }
+  onaccountChange(event:Event){
+  this.accountid=(event.target as HTMLSelectElement).value;
+  console.log(this.accountid)
     
   }
 
