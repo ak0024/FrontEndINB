@@ -16,6 +16,10 @@ export class BankslipServiceService {
   claimbankslip(accountid:string): Observable<BankSlip[]>{
     return this.httpClient.get<BankSlip[]>("http://localhost:8082/bankslipapi/bankslipaccount/"+ accountid)
   }
+
+  createbankslip(bankslip:BankSlip):Observable<boolean>{
+    return this.httpClient.post<boolean>("http://localhost:8082/bankslipapi/bankslips/bankslip",bankslip)
+  }
   updateBankslip(bankSlip:BankSlip):Observable<BankSlip>{
     return this.httpClient.put<BankSlip>("http://localhost:8082/bankslipapi/bankslips/bankslip",bankSlip)
   }
