@@ -18,7 +18,7 @@ export class CustomerRegistrationComponent implements OnInit {
   cities: string[] = [];
   selectedState: string = '';
   customer: Customer = new Customer();
-
+  ss:boolean=false
   firstNameReq: boolean = false;
   lastNameReq: boolean = false;
   address1Req: boolean = false;
@@ -34,15 +34,18 @@ export class CustomerRegistrationComponent implements OnInit {
 
   userNameValidate: string = '';
 
-  word:any
+  word: any
+
+  aadharfile?: File
+  panfile?: File
   constructor(
     private customerRegistrationService: CustomerRegistrationServiceService,
     private dataService: DataServiceService,
     private router: Router,
     private fileUploadDownloadService: FileUploadDownloadService
-    
+
   ) {
-    this.word=this.router.getCurrentNavigation()?.extras.state;
+    this.word = this.router.getCurrentNavigation()?.extras.state;
   }
 
   loading: boolean = false; // Flag variable
@@ -162,22 +165,48 @@ export class CustomerRegistrationComponent implements OnInit {
     console.log(this.account);
     this.customerRegistrationService
       .createCustomerRegistration(this.account)
-      .subscribe((data:any) => {
+      .subscribe((data: any) => {
         // console.log(data);
-        if (data[0] === 'success')
-          this.router.navigateByUrl('registrationWaiting', { state: data });
-        
+        console.log(data[0])
+        if (data[0] =='success'){
+          console.log("ulla varuthu")
+
+          
+          this.customerRegistrationService.uploadAadhar(this.aadharfile,this.account.customer_id.aadharNumber).subscribe(
+            data=>{
+              console.log(data)
+            }
+          )
+          this.customerRegistrationService.uploadPan(this.panfile,this.account.customer_id.panCardNumber).subscribe(
+            data=>{
+              console.log(data)
+            }
+          )
+          console.log(data)
+          const jsonObject = {
+            status: data[0],
+            inbNumber: data[1],
+            accNumber: data[2]
+          };
+          
+          const jsonString = JSON.stringify(jsonObject);
+          sessionStorage.setItem("SuccessDetails",jsonString)
+          this.router.navigate(["registrationWaiting"])
+        }
         Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: data,
+          position: 'center',
+          title: data
         })
         this.router.navigate(['customerRegistration']);
-        this.account = new Account();
+      
       });
   }
-  onChange(event : any) {
-    this.file = event.target.files[0];
+  onChange(event: any) {
+    this.aadharfile = event.target.files[0];
+  }
+
+  onChangePan(event: any) {
+    this.panfile = event.target.files[0];
   }
 
   // OnClick of button Upload
@@ -187,6 +216,7 @@ export class CustomerRegistrationComponent implements OnInit {
       this.fileUploadDownloadService.upload(this.file).subscribe(
         data => {
           console.log(data);
+
         }
       );
     }

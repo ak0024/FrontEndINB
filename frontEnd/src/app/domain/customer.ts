@@ -17,9 +17,9 @@ export class Customer{
     passwordReachLimit: number=0;
     confirmPassword:String="";
     message:String="";
-    aadharFile: Blob = new Blob();
+    aadharFile?: File
     aadharNumber: number=0;
-    panCardFile: Blob = new Blob();
+    panCardFile?: File
     panCardNumber: string='';
     whyMessage: string='';
     

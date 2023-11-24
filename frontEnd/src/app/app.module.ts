@@ -22,6 +22,7 @@ import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-
 import { PasswordReachLimitComponent } from './admin/password-reach-limit/password-reach-limit.component';
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
+import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
 
 
 
@@ -46,7 +47,6 @@ import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip
     BankSlipApprovalComponent,
     PasswordReachLimitComponent,
     CustomerbankslipComponent,
-    CustomerTransactionComponent,
     SendMoneyComponent,
     SendMoneyComponent,
     AccountapprovalComponent,
@@ -54,6 +54,8 @@ import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip
     PasswordReachLimitComponent,
     CustomerbankslipComponent,
     IssueBankSlipComponent,
+    CustomerTransactionComponent
+    
   ],
   imports: [
     BrowserModule,

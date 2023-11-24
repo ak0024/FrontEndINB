@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 export class RegistrationWaitingComponent {
   word:any
 constructor(private router:Router){
-  this.word=this.router.getCurrentNavigation()?.extras.state;
-
+  this.word=JSON.parse(sessionStorage.getItem("SuccessDetails")||'{}')
+  console.log(this.word)
 }
 
 gotohome(){
+  sessionStorage.setItem("SuccessDetails","")
   this.router.navigate(['']);
+  
 }
 
   

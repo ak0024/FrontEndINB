@@ -11,8 +11,7 @@ export class FileUploadDownloadService {
 
   upload(file: any) : Observable<boolean>{
 
-    console.log(file);
-    
+    console.log(file);    
     // Create form data 
     const formData = new FormData();  
         

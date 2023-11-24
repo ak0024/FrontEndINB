@@ -37,6 +37,7 @@ const routes: Routes = [
       }
     ]
   },
+  {path:"registrationWaiting",component:RegistrationWaitingComponent},
   { path: "editprofile", component: EditProfileComponent },
   { path: "claimbankslip", component: ClaimBankslipComponent },
   { path: "adminlogin", component: AdminloginComponent },
