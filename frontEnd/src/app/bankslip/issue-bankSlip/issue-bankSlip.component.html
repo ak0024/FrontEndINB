@@ -6,9 +6,11 @@
   <img class="logo" src="logo.png" alt="Company Logo"> <!-- Add your logo image -->
   
   <div class="payer-info">
-     &nbsp;&nbsp;&nbsp; <label for="payer">Payer Account:</label>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="from-account">Sender Account</label><input type="text" id="payer" placeholder="Sender's Account" [(ngModel)]="accountid" name="payer-info" readonly>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="payer">Payer Account:</label>
       <input type="text" id="payer" placeholder="Payer's Account" [(ngModel)]="bankslip.payeraccountid.account_id" name="payer-info"><br><br>
-      &nbsp;&nbsp;&nbsp; <label for="amount">Amount:</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="amount">Amount:</label>
       <input type="text" id="amount" placeholder="0.00"  [(ngModel)]="bankslip.amount" name="amount" >
   </div>
   <div class="date-info">
