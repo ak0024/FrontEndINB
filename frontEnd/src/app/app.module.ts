@@ -28,7 +28,7 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // AppRoutingModule,
+    //AppRoutingModule,
     CustomerLoginComponent,
     CustomerHomeComponent,
     AdminloginComponent,
@@ -48,6 +48,13 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
     CustomerbankslipComponent,
     CustomerTransactionComponent,
     SendMoneyComponent,
+    SendMoneyComponent,
+    CustomerbankslipComponent,
+    SendMoneyComponent,
+    BankSlipApprovalComponent,
+    AccountapprovalComponent,
+    BankSlipApprovalComponent,
+    PasswordReachLimitComponent,
     IssueBankSlipComponent,
     CustomerTransactionComponent
   ],

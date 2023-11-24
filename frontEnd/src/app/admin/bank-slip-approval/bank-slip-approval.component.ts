@@ -10,13 +10,26 @@ import { AdminApprovalService } from 'src/app/Service/admin-approval.service';
 })
 export class BankSlipApprovalComponent implements OnInit {
 admin:Admin = new Admin();
+bankslip:BankSlip= new BankSlip;
 bankslips:BankSlip[]=[];
+flag:boolean=false;
   constructor(private adminServie: AdminApprovalService) { }
 
   ngOnInit() {
     this.onReload();
   }
 
+  isNextThreeMonthsBeforeToday(date:string): boolean {
+    const dateObject = new Date(date);
+    dateObject.setMonth(dateObject.getMonth()+3)
+    console.log(dateObject.getMonth());
+    
+    
+    const today = new Date();
+    console.log(date,today);
+    
+    return today < dateObject;
+  }
   onReload() {
     this.adminServie.claimedBankslip().subscribe((data) => {
       this.bankslips = data;
@@ -28,7 +41,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.acceptBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data;
+          this.onReload();
         }
       }
     )
@@ -39,7 +53,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.rejectBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data; 
+          this.onReload();
         }
       }
     )
@@ -48,7 +63,8 @@ bankslips:BankSlip[]=[];
     this.adminServie.bounceBankslip(chequeno).subscribe(
       data=>{
         if(data){
-          this.onReload()
+          this.flag = data;
+          this.onReload();
         }
       }
     )
