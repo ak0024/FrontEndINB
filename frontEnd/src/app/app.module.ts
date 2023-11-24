@@ -46,7 +46,8 @@ import { SendMoneyComponent } from './customer/send-money/send-money.component';
     AccountapprovalComponent,
     BankSlipApprovalComponent,
     PasswordReachLimitComponent,
-    IssueBankSlipComponent
+    IssueBankSlipComponent,
+    CustomerTransactionComponent
   ],
   imports: [
     BrowserModule,
