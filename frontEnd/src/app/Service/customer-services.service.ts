@@ -37,4 +37,7 @@ export class CustomerServicesService {
   sendMoney(transaction:Transaction):Observable<string[]>{
     return this.httpClient.post<string[]>("http://localhost:8082/transactionapi/sendMoney",transaction);
   }
+  changePassword(customer:Customer): Observable<Customer>{
+    return this.httpClient.put<Customer>("http://localhost:8082/customerapi/changePassword",customer);
+  }
 }
