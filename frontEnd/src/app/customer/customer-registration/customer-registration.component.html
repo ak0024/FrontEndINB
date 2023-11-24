@@ -177,6 +177,29 @@
         <td style="color: red; font-size: small;" [hidden]="!confirmPasswordReq">&#10008; Confirm-Password required</td>
       </tr>
 
+      <tr>
+        <td><label for="cell">Aadhar Number : </label></td>
+        <td><input type="text" id="aadharNumber" name="aadharNumber" maxlength="12"  [(ngModel)]="account.customer_id.aadharNumber" size="40" placeholder="000000000000">
+        </td>
+
+      </tr>
+
+      <tr>
+          <td><label>Upload Aadhar Card : </label></td>
+          <td><input class="form-control" type="file" (change)="onChange($event)" /> </td>
+      </tr>
+
+      <tr>
+        <td><label for="cell">Pan Number : </label></td>
+        <td><input type="text" id=" panCardNumber" name="panCardNumber" maxlength="19"  [(ngModel)]="account.customer_id.panCardNumber" size="40"placeholder="0000000000">
+        </td>
+
+      </tr>
+
+      <tr>
+        <td><label>Upload Pan Card : </label></td>
+        <td><input class="form-control" type="file" (change)="onChange($event)" /> </td>
+    </tr>
     </table>
     <button type="submit" class="my-button">submit</button>
   </div>

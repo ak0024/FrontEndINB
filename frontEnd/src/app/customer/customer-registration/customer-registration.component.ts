@@ -6,6 +6,7 @@ import { Account } from 'src/app/Domain/account';
 import { Router } from '@angular/router';
 import { Customer } from 'src/app/Domain/Customer';
 import Swal from 'sweetalert2';
+import { FileUploadDownloadService } from 'src/app/Service/file-upload-download.service';
 
 @Component({
   selector: 'app-customer-registration',
@@ -37,10 +38,15 @@ export class CustomerRegistrationComponent implements OnInit {
   constructor(
     private customerRegistrationService: CustomerRegistrationServiceService,
     private dataService: DataServiceService,
-    private router: Router
+    private router: Router,
+    private fileUploadDownloadService: FileUploadDownloadService
+    
   ) {
     this.word=this.router.getCurrentNavigation()?.extras.state;
   }
+
+  loading: boolean = false; // Flag variable
+  file?: File; // Variable to store file to Upload
 
   ngOnInit() {
     this.getStates();
@@ -169,5 +175,20 @@ export class CustomerRegistrationComponent implements OnInit {
         this.router.navigate(['customerRegistration']);
         this.account = new Account();
       });
+  }
+  onChange(event : any) {
+    this.file = event.target.files[0];
+  }
+
+  // OnClick of button Upload
+  onUpload() {
+    if (this.file) {
+      console.log(this.file);
+      this.fileUploadDownloadService.upload(this.file).subscribe(
+        data => {
+          console.log(data);
+        }
+      );
+    }
   }
 }
