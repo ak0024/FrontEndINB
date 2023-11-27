@@ -23,6 +23,7 @@ import { PasswordReachLimitComponent } from './admin/password-reach-limit/passwo
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
+import { CustomerforgotpasswordComponent } from './customer/customerforgotpassword/customerforgotpassword/customerforgotpassword.component';
 
 
 
@@ -55,6 +56,7 @@ import { CustomerTransactionComponent } from './customer/customer-transaction/cu
     CustomerbankslipComponent,
     IssueBankSlipComponent,
     CustomerTransactionComponent,
+    CustomerforgotpasswordComponent
     
   ],
   imports: [

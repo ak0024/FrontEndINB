@@ -19,15 +19,19 @@ import { PasswordReachLimitComponent } from './admin/password-reach-limit/passwo
 import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-approval.component';
 import { SendMoneyComponent } from './customer/send-money/send-money.component';
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
+import { CustomerforgotpasswordComponent } from './customer/customerforgotpassword/customerforgotpassword/customerforgotpassword.component';
 
 const routes: Routes = [
   { path: "", component: CustomerLoginComponent },
+  { path: "changePassword", component: CustomerforgotpasswordComponent },
   {
     path: "customerHome", component: CustomerHomeComponent, children: [
       { path: "", component: CustomerViewComponent },
       { path: "editprofile", component: EditProfileComponent },
       { path: "transactions", component: CustomerTransactionComponent },
       { path: "send-money/:accountId", component: SendMoneyComponent },
+
+
       {
         path: "bankslip", component: CustomerbankslipComponent, children: [
           { path: "", component: ClaimBankslipComponent },
@@ -37,7 +41,7 @@ const routes: Routes = [
       }
     ]
   },
-  {path:"registrationWaiting",component:RegistrationWaitingComponent},
+  { path: "registrationWaiting", component: RegistrationWaitingComponent },
   { path: "editprofile", component: EditProfileComponent },
   { path: "claimbankslip", component: ClaimBankslipComponent },
   { path: "adminlogin", component: AdminloginComponent },
