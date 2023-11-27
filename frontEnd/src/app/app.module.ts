@@ -54,7 +54,7 @@ import { CustomerTransactionComponent } from './customer/customer-transaction/cu
     PasswordReachLimitComponent,
     CustomerbankslipComponent,
     IssueBankSlipComponent,
-    CustomerTransactionComponent
+    CustomerTransactionComponent,
     
   ],
   imports: [
