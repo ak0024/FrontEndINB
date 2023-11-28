@@ -5,7 +5,9 @@
   <option value="">select account</option>
   <option *ngFor="let account of accounts">{{account.account_id}}</option>
 </select>
-<table border="1" id="transaction">
+<h1 *ngIf="accountId==''" >Select any account to see transaction</h1>
+<h1  *ngIf="accountId!=='' && transaction.length==0">No transaction for this account</h1>
+<table border="1" id="transaction" *ngIf="accountId!=='' && transaction.length!==0">
   <tr>
     <th>Transactionid</th>
     <th>Date and type</th>

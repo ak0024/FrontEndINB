@@ -39,13 +39,7 @@ export class EditProfileComponent implements OnInit{
   ngOnInit(): void {
     this.customerId = this.activatedRouter.snapshot.params['customerId'];
     this.customer=JSON.parse(sessionStorage.getItem("customer")||'{}')
-    // this.customerService.getCustomerbyCustomerId(this.customerId).subscribe(
-    //   data => {
-    //     this.customer = data;
-    //     console.log(this.customer);
-        
-    //   }
-    // );
+    
     
   }
 
@@ -53,14 +47,15 @@ export class EditProfileComponent implements OnInit{
     this.customerService.updateCustomer(this.customer).subscribe(
       data =>{
         console.log(data);
-        this.flag= true;
-        
+        this.flag= true;  
+        setTimeout(() => {
+          alert('Profile updated successfully!');
+        }, 200);
+        this.customer=data
+        sessionStorage.setItem("customer",JSON.stringify(data))
       }
     );
-    setTimeout(() => {
-      alert('Profile updated successfully!');
-      location.reload(); 
-    }, 2000);
+    
    
   }
 

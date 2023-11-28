@@ -18,7 +18,7 @@ export class CustomerRegistrationComponent implements OnInit {
   cities: string[] = [];
   selectedState: string = '';
   customer: Customer = new Customer();
-  ss:boolean=false
+  ss: boolean = false;
   firstNameReq: boolean = false;
   lastNameReq: boolean = false;
   address1Req: boolean = false;
@@ -34,18 +34,18 @@ export class CustomerRegistrationComponent implements OnInit {
 
   userNameValidate: string = '';
 
-  word: any
+  word: any;
 
-  aadharfile?: File
-  panfile?: File
+  aadharfile?: File;
+  panfile?: File;
   constructor(
     private customerRegistrationService: CustomerRegistrationServiceService,
     private dataService: DataServiceService,
     private router: Router,
     private fileUploadDownloadService: FileUploadDownloadService
-
   ) {
     this.word = this.router.getCurrentNavigation()?.extras.state;
+    console.log(this.word);
   }
 
   loading: boolean = false; // Flag variable
@@ -53,7 +53,7 @@ export class CustomerRegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.getStates();
-    console.log(this.word)
+    console.log(this.word);
   }
   account: Account = new Account();
   confirmPassword: string = '';
@@ -104,7 +104,13 @@ export class CustomerRegistrationComponent implements OnInit {
     }
   }
 
+  onChange(event: any) {
+    this.aadharfile = event.target.files[0];
+  }
 
+  onChangePan(event: any) {
+    this.panfile = event.target.files[0];
+  }
 
   register() {
     if (this.account.customer_id.firstName === '') {
@@ -160,65 +166,53 @@ export class CustomerRegistrationComponent implements OnInit {
       this.passwordReq ||
       this.confirmPasswordReq ||
       this.userNameValidate === 'invalid'
-    )
+    ) {
       this.router.navigate(['customerRegistration']);
+      return;
+    }
     console.log(this.account);
     this.customerRegistrationService
       .createCustomerRegistration(this.account)
       .subscribe((data: any) => {
         // console.log(data);
-        console.log(data[0])
-        if (data[0] =='success'){
-          console.log("ulla varuthu")
+        console.log(data[0]);
+        if (data[0] == 'success') {
+          console.log('ulla varuthu');
 
-          
-          this.customerRegistrationService.uploadAadhar(this.aadharfile,this.account.customer_id.aadharNumber).subscribe(
-            data=>{
-              console.log(data)
-            }
-          )
-          this.customerRegistrationService.uploadPan(this.panfile,this.account.customer_id.panCardNumber).subscribe(
-            data=>{
-              console.log(data)
-            }
-          )
-          console.log(data)
+          this.customerRegistrationService
+            .uploadAadhar(
+              this.aadharfile,
+              this.account.customer_id.aadharNumber
+            )
+            .subscribe((data) => {
+              console.log(data);
+            });
+          this.customerRegistrationService
+            .uploadPan(this.panfile, this.account.customer_id.panCardNumber)
+            .subscribe((data) => {
+              console.log(data);
+            });
+          console.log(data);
           const jsonObject = {
             status: data[0],
             inbNumber: data[1],
-            accNumber: data[2]
+            accNumber: data[2],
           };
-          
           const jsonString = JSON.stringify(jsonObject);
-          sessionStorage.setItem("SuccessDetails",jsonString)
-          this.router.navigate(["registrationWaiting"])
+          sessionStorage.setItem('SuccessDetails', jsonString);
+          this.router.navigateByUrl('registrationWaiting', {
+            state: jsonObject,
+          });
+          return;
+        } else {
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: data,
+          });
+          this.router.navigate(['customerRegistration']);
+          return;
         }
-        Swal.fire({
-          position: 'center',
-          title: data
-        })
-        this.router.navigate(['customerRegistration']);
-      
       });
-  }
-  onChange(event: any) {
-    this.aadharfile = event.target.files[0];
-  }
-
-  onChangePan(event: any) {
-    this.panfile = event.target.files[0];
-  }
-
-  // OnClick of button Upload
-  onUpload() {
-    if (this.file) {
-      console.log(this.file);
-      this.fileUploadDownloadService.upload(this.file).subscribe(
-        data => {
-          console.log(data);
-
-        }
-      );
-    }
   }
 }

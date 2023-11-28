@@ -2,20 +2,25 @@
     <option value="">select account</option>
     <option *ngFor="let account of accounts">{{account.account_id}}</option>
 </select>
+<br><br>
 <div class="check">
   <img class="logo" src="logo.png" alt="Company Logo"> <!-- Add your logo image -->
   
   <div class="payer-info">
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="from-account">Sender Account</label><input type="text" id="payer" placeholder="Sender's Account" [(ngModel)]="accountid" name="payer-info" readonly>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="from-account">Sender Account</label><input  (change)="fromAccountIdReq=false" type="text" id="payer" placeholder="Sender's Account" [(ngModel)]="accountid" name="payer-info" readonly>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="color: red;" *ngIf="fromAccountIdReq"> &#10008; Sender Account required</p>
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="payer">Payer Account:</label>
-      <input type="text" id="payer" placeholder="Payer's Account" [(ngModel)]="bankslip.payeraccountid.account_id" name="payer-info"><br><br>
+      <input (change)="toAccountIdReq=false" type="text" id="payer" placeholder="Payer's Account" [(ngModel)]="bankslip.payeraccountid.account_id" name="payer-info">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="color: red;" *ngIf="toAccountIdReq">&#10008;  Payer account required</p><br><br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label for="amount">Amount:</label>
-      <input type="text" id="amount" placeholder="0.00"  [(ngModel)]="bankslip.amount" name="amount" >
+      <input type="text" id="amount" placeholder="0.00"  [(ngModel)]="bankslip.amount" name="amount"  (change)="amountReq=false">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p *ngIf="amountReq" style="color: red;">&#10008; Amount required</p>
   </div>
   <div class="date-info">
       <label for="date">Date:</label>
-      <input type="date" id="date"  [(ngModel)]="bankslip.chequedate" name="amount" >
+      <input type="date" id="date"  [(ngModel)]="bankslip.chequedate" name="amount"  (change)="dateReq=false">
+      <p *ngIf="dateReq"  style="color: red;">&#10008; Date required</p>
   </div>
   <div class="issue-button">
       <button (click)="issueCheck()">Issue</button>

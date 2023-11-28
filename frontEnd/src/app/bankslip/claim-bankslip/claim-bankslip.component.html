@@ -1,10 +1,14 @@
 
 <h1>CLAIM BANKSLIP</h1>
+<br><br>
  <select (change)="onaccountChange($event)"> 
     <option value="">select account</option>
     <option *ngFor="let account of accounts">{{account.account_id}}</option>
 </select>
-<table border="1" id="Bankslip">
+<br>
+<h2 *ngIf="accountid==''">Select any account to acquire bankslip</h2>
+<h2  *ngIf="accountid!=='' && claimbankslip.length==0">No bankslip for your Account</h2>
+<table border="1" id="Bankslip" *ngIf="accountid!=='' && claimbankslip.length!=0">
     <tr>
         <th>Chequeno</th>
         <th>Accountid</th>
