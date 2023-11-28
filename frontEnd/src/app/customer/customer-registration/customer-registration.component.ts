@@ -31,8 +31,14 @@ export class CustomerRegistrationComponent implements OnInit {
   userNameReq: boolean = false;
   passwordReq: boolean = false;
   confirmPasswordReq: boolean = false;
+  panNumberReq: boolean = false;
+  aadharNumberReq: boolean = false;
 
   userNameValidate: string = '';
+  passwordValidate: string = '';
+  aadharNumberValidate: string = '';
+  panNumberValidate: string = '';
+  emailValidate:string='';
 
   word: any;
 
@@ -104,6 +110,68 @@ export class CustomerRegistrationComponent implements OnInit {
     }
   }
 
+  onPasswordChange(event: Event) {
+    const val = (event.target as HTMLSelectElement).value;
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=!])(.{8,})$/;
+    if (val === '') this.passwordValidate = '';
+    else {
+      if (regex.test(val)) {
+        this.passwordValidate = 'valid';
+        console.log('Valid pattern');
+      } else {
+        this.passwordValidate = 'invalid';
+        console.log('Invalid pattern');
+      }
+    }
+  }
+
+  onConfirmPasswordChange(event: Event) {}
+
+  onAadharNumberChange(event: Event) {
+    const val = (event.target as HTMLSelectElement).value;
+    const regex = /^\d{12}$/;
+    if (val === '') this.aadharNumberValidate = '';
+    else {
+      if (regex.test(val)) {
+        this.aadharNumberValidate = 'valid';
+        console.log('Valid pattern');
+      } else {
+        this.aadharNumberValidate = 'invalid';
+        console.log('Invalid pattern');
+      }
+    }
+  }
+
+  onPanNumberChange(event: Event) {
+    const val = (event.target as HTMLSelectElement).value;
+    const regex = /^[A-Z]{5}\d{4}[A-Z]$/;
+    if (val === '') this.panNumberValidate = '';
+    else {
+      if (regex.test(val)) {
+        this.panNumberValidate = 'valid';
+        console.log('Valid pattern');
+      } else {
+        this.panNumberValidate = 'invalid';
+        console.log('Invalid pattern');
+      }
+    }
+  }
+
+  onEmailChange(event:Event){
+    const val = (event.target as HTMLSelectElement).value;
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (val === '') this.panNumberValidate = '';
+    else {
+      if (regex.test(val)) {
+        this.panNumberValidate = 'valid';
+        console.log('Valid pattern');
+      } else {
+        this.panNumberValidate = 'invalid';
+        console.log('Invalid pattern');
+      }
+    }
+  }
+
   onChange(event: any) {
     this.aadharfile = event.target.files[0];
   }
@@ -131,10 +199,10 @@ export class CustomerRegistrationComponent implements OnInit {
     ) {
       this.cityReq = true;
     }
-    if (this.account.customer_id.zip === 0) {
+    if (this.account.customer_id.zip === undefined) {
       this.zipReq = true;
     }
-    if (this.account.customer_id.phone === 0) {
+    if (this.account.customer_id.phone === undefined) {
       this.phoneReq = true;
     }
     if (this.account.customer_id.email === '') {
@@ -152,6 +220,13 @@ export class CustomerRegistrationComponent implements OnInit {
     if (this.confirmPassword === '') {
       this.confirmPasswordReq = true;
     }
+    if (this.account.customer_id.aadharNumber === undefined) {
+      this.aadharNumberReq = true;
+    }
+    if (this.account.customer_id.panCardNumber === "") {
+      this.panNumberReq = true;
+    }
+  
     if (
       this.firstNameReq ||
       this.lastNameReq ||
@@ -165,7 +240,11 @@ export class CustomerRegistrationComponent implements OnInit {
       this.userNameReq ||
       this.passwordReq ||
       this.confirmPasswordReq ||
-      this.userNameValidate === 'invalid'
+      this.aadharNumberReq ||
+      this.panNumberReq ||
+      this.userNameValidate === 'invalid' ||
+      this.panNumberValidate === 'invalid' ||
+      this.aadharNumberValidate === 'invalid'
     ) {
       this.router.navigate(['customerRegistration']);
       return;
@@ -182,7 +261,7 @@ export class CustomerRegistrationComponent implements OnInit {
           this.customerRegistrationService
             .uploadAadhar(
               this.aadharfile,
-              this.account.customer_id.aadharNumber
+              this.account.customer_id.aadharNumber || 0
             )
             .subscribe((data) => {
               console.log(data);

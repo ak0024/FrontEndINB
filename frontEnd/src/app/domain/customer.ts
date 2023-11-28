@@ -8,9 +8,9 @@ export class Customer{
     addressLine3: string='';
     city: string='';
     state: string='';
-    zip: number=0;
-    phone: number=0;
-    cell: number=0;
+    zip: number | undefined;
+    phone: number| undefined;
+    cell: number| undefined;
     email: string='';
     customerId: string='';
     customerStatus: string='';
@@ -18,7 +18,7 @@ export class Customer{
     confirmPassword:String="";
     message:String="";
     aadharFile?: File
-    aadharNumber: number=0;
+    aadharNumber: number | undefined;
     panCardFile?: File
     panCardNumber: string='';
     whyMessage: string='';
