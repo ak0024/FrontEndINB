@@ -19,6 +19,8 @@ export class Account{
 	 fdRateOfInterest:number=0;
 	 startDate:any=null;
 	 endDate:any=null;
+	 accountStatus:string=""
+	 showPassword: boolean = false;
 	
     
 }

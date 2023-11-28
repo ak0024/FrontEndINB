@@ -58,7 +58,8 @@ import { AddAccountComponent } from './customer/add-account/add-account.componen
     IssueBankSlipComponent,
     CustomerTransactionComponent,
     CustomerforgotpasswordComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    
     
   ],
   imports: [

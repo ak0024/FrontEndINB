@@ -37,8 +37,8 @@ flag:boolean=false;
     });
   }
 
-  acceptBankslip(chequeno:string){
-    this.adminServie.acceptBankslip(chequeno).subscribe(
+  acceptBankslip(bankSlip:BankSlip){
+    this.adminServie.acceptBankslip(bankSlip).subscribe(
       data=>{
         if(data){
           this.flag = data;
@@ -49,8 +49,8 @@ flag:boolean=false;
     
   }
 
-  rejectBankslip(chequeno:string){
-    this.adminServie.rejectBankslip(chequeno).subscribe(
+  rejectBankslip(bankSlip:BankSlip){
+    this.adminServie.rejectBankslip(bankSlip).subscribe(
       data=>{
         if(data){
           this.flag = data; 
@@ -59,8 +59,9 @@ flag:boolean=false;
       }
     )
   }
-  bounceBankslip(chequeno:string){
-    this.adminServie.bounceBankslip(chequeno).subscribe(
+  bounceBankslip(bankSlip:BankSlip){
+    console.log(bankSlip)
+    this.adminServie.bounceBankslip(bankSlip).subscribe(
       data=>{
         if(data){
           this.flag = data;

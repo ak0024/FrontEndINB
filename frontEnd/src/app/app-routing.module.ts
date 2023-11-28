@@ -31,15 +31,13 @@ const routes: Routes = [
       { path: "editprofile", component: EditProfileComponent },
       { path: "transactions", component: CustomerTransactionComponent },
       { path: "send-money/:accountId", component: SendMoneyComponent },
-
-
       {
         path: "bankslip", component: CustomerbankslipComponent, children: [
           { path: "", component: ClaimBankslipComponent },
           { path: "issuebankslip", component: IssueBankSlipComponent }
         ]
-
-      }
+      },
+      {path:"addaccount",component:AddAccountComponent}
     ]
   },
   { path: "registrationWaiting", component: RegistrationWaitingComponent },

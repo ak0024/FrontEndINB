@@ -1,13 +1,12 @@
-
 <h1>CLAIM BANKSLIP</h1>
 <br><br>
- <select (change)="onaccountChange($event)"> 
+<select (change)="onaccountChange($event)">
     <option value="">select account</option>
     <option *ngFor="let account of accounts">{{account.account_id}}</option>
 </select>
 <br>
 <h2 *ngIf="accountid==''">Select any account to acquire bankslip</h2>
-<h2  *ngIf="accountid!=='' && claimbankslip.length==0">No bankslip for your Account</h2>
+<h2 *ngIf="accountid!=='' && claimbankslip.length==0">No bankslip for your Account</h2>
 <table border="1" id="Bankslip" *ngIf="accountid!=='' && claimbankslip.length!=0">
     <tr>
         <th>Chequeno</th>
@@ -25,13 +24,11 @@
         <td>{{Bankslip.payeraccountid.account_id}}</td>
         <td>{{Bankslip.chequedate}}</td>
         <td>{{Bankslip.amount}}</td>
-        <td><button (click)= "message(Bankslip)" *ngIf="Bankslip.slipstatus==='Active'">Claim</button>
-            <div  *ngIf="Bankslip.slipstatus==='In progress'">{{Bankslip.slipstatus}}</div>
-            <div *ngIf="Bankslip.slipstatus==='Bounced'">{{Bankslip.slipstatus}}</div>
+        <td><button (click)="message(Bankslip)" *ngIf="Bankslip.slipstatus==='Active'">Claim</button>
+            <div *ngIf="Bankslip.slipstatus==='In progress'">{{Bankslip.slipstatus}}</div>
+            <button (click)="message(Bankslip)" *ngIf="Bankslip.slipstatus==='Bounced'">ReClaim</button>
             <div *ngIf="Bankslip.slipstatus==='Rejected'">{{Bankslip.slipstatus}}</div>
             <div *ngIf="Bankslip.slipstatus==='Claimed'">{{Bankslip.slipstatus}}</div>
-
         </td>
-        
     </tr>
 </table>

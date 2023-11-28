@@ -1,7 +1,9 @@
-<header class="main-header">
-    <div>
-        <a class="main-header__brand">
-            iNB
-        </a>
-    </div>
-  </header>
+<h1>Add new account Request</h1>
+<br><br>
+<select name="accounttype" id="aaa" [(ngModel)]="account.account_type" >
+    <option value="">Select Account type</option>
+    <option value="Savings">Savings</option>
+    <option value="Current">Current</option>
+</select>
+<br><br><br>
+<button (click)="createaccount()" >Create Account</button>

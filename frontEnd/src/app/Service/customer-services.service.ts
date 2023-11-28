@@ -40,4 +40,8 @@ export class CustomerServicesService {
   changePassword(customer:Customer): Observable<Customer>{
     return this.httpClient.put<Customer>("http://localhost:8082/customerapi/changePassword",customer);
   }
+
+  addnewAccount(account:Account):Observable<boolean>{
+    return this.httpClient.post<boolean>("http://localhost:8082/accountapi/accounts/account",account)
+  }
 }

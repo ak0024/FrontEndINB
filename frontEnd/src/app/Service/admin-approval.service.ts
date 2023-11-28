@@ -47,14 +47,16 @@ export class AdminApprovalService {
   claimedBankslip():Observable<BankSlip[]>{
     return this.httpClient.get<BankSlip[]>("http://localhost:8082/adminapi/bankslipApproval");
   }
-  acceptBankslip(chequeno:string):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/acceptBankslip/"+chequeno);
+  acceptBankslip(bankSlip:BankSlip):Observable<boolean>{
+    return this.httpClient.post<boolean>("http://localhost:8082/adminapi/acceptBankslip",bankSlip);
   }
-  rejectBankslip(chequeno:string):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/rejectBankslip/"+chequeno);
+  rejectBankslip(bankSlip:BankSlip):Observable<boolean>{
+    return this.httpClient.post<boolean>("http://localhost:8082/adminapi/rejectBankslip",bankSlip);
   }
-  bounceBankslip(chequeno:string):Observable<boolean>{
-    return this.httpClient.get<boolean>("http://localhost:8082/adminapi/bounceBankslip/"+chequeno);
+  bounceBankslip(bankSlip:BankSlip):Observable<boolean>{
+    console.log(bankSlip);
+    
+    return this.httpClient.post<boolean>("http://localhost:8082/adminapi/bouncedBankslip",bankSlip);
   }
 
 }

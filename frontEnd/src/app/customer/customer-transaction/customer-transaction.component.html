@@ -23,7 +23,7 @@
   <td>{{Transaction.transactionType}}</td>
   <td>{{Transaction.transactionStatus}}</td>
   <td *ngIf="Transaction.fromAccount.account_id===accountId && Transaction.transactionStatus==='Success'" style="color: red;">-{{Transaction.amount}}</td>
-  <td *ngIf="Transaction.toAccount.account_id==accountId && Transaction.transactionStatus==='Success'" style="color: green;">+{{Transaction.amount}}</td>
+  <td *ngIf="Transaction.toAccount.account_id==accountId && Transaction.transactionStatus==='Success' && Transaction.toAccount.account_id!=Transaction.fromAccount.account_id" style="color: green;">+{{Transaction.amount}}</td>
   <td *ngIf="Transaction.toAccount.account_id==accountId && Transaction.transactionStatus==='Failed'" style="color: orange;">{{Transaction.amount}}</td>
   <td *ngIf="Transaction.fromAccount.account_id==accountId && Transaction.transactionStatus==='Failed'" style="color: orange;">{{Transaction.amount}}</td>
 </tr>
