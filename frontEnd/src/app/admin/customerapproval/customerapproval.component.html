@@ -5,6 +5,8 @@
         <th>User Name</th>
         <th>Address</th>
         <th>Contact</th>
+        <th>Aadhar</th>
+        <th>Pan</th>
         <th>Customer Approve Action</th>
     </tr>
     <tr *ngFor="let customer of customers">
@@ -13,6 +15,11 @@
         <td>{{customer.userName}}</td>
         <td>{{customer.addressLine1}},<br>{{customer.addressLine2}},<br>{{customer.addressLine3}}</td>
         <td>Phone:{{customer.phone}}<br>Email:{{customer.email}}</td>
+        <td>{{customer.aadharNumber}} 
+         <br><a href="http://localhost:8082/adminapi/aadharfile/{{customer.customerId}}">Download</a>
+         </td>
+         <td>{{customer.panCardNumber}} 
+            <br><a href="http://localhost:8082/adminapi/panfile/{{customer.customerId}}">Download</a></td>
         <td>
             <button style="background-color: green;" (click)="acceptCustomer(customer.customerId)">Accept</button>
             <button style="background-color: red;" (click)="rejectCustomer(customer.customerId)">Reject</button>

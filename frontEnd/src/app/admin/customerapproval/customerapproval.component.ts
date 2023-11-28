@@ -36,6 +36,11 @@ export class CustomerapprovalComponent implements OnInit {
     
   }
 
+  getAadharFileUrl(customer:string): string {
+    // Assuming your API endpoint is 'http://localhost:8082/adminapi/aadharfile/'
+    return `http://localhost:8082/adminapi/aadharfile/${customer}`;
+  }
+
   rejectCustomer(customerId:string){
     this.adminServie.rejectCustomer(customerId).subscribe(
       data=>{
