@@ -20,6 +20,7 @@ import { BankSlipApprovalComponent } from './admin/bank-slip-approval/bank-slip-
 import { SendMoneyComponent } from './customer/send-money/send-money.component';
 import { CustomerbankslipComponent } from './customer/customerbankslip/customerbankslip.component';
 import { CustomerforgotpasswordComponent } from './customer/customerforgotpassword/customerforgotpassword/customerforgotpassword.component';
+import { AddAccountComponent } from './customer/add-account/add-account.component';
 
 const routes: Routes = [
   { path: "", component: CustomerLoginComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
     ]
   },
   { path: "registrationWaiting", component: RegistrationWaitingComponent },
+  {path:"addAccount", component: AddAccountComponent},
   { path: "editprofile", component: EditProfileComponent },
   { path: "claimbankslip", component: ClaimBankslipComponent },
   { path: "adminlogin", component: AdminloginComponent },
