@@ -5,6 +5,25 @@
   padding: auto;
   text-align: center;
   position: relative;
+  width: 100%;
+  background-color: #088395;
+  padding: 8px 16px;
+}
+
+h3{
+  display: inline;
+  text-align: center;
+}
+
+main{
+  margin: 0;
+}
+.main-header__brand{
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: x-large;
+  color: #99dbdd;
+  
 }
 
 /* Main CSS Here */

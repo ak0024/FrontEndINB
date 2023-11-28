@@ -24,6 +24,7 @@ import { CustomerbankslipComponent } from './customer/customerbankslip/customerb
 import { IssueBankSlipComponent } from './bankslip/issue-bankSlip/issue-bankSlip.component';
 import { CustomerTransactionComponent } from './customer/customer-transaction/customer-transaction.component';
 import { CustomerforgotpasswordComponent } from './customer/customerforgotpassword/customerforgotpassword/customerforgotpassword.component';
+import { AddAccountComponent } from './customer/add-account/add-account.component';
 
 
 
@@ -56,7 +57,8 @@ import { CustomerforgotpasswordComponent } from './customer/customerforgotpasswo
     CustomerbankslipComponent,
     IssueBankSlipComponent,
     CustomerTransactionComponent,
-    CustomerforgotpasswordComponent
+    CustomerforgotpasswordComponent,
+    AddAccountComponent
     
   ],
   imports: [
