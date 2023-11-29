@@ -182,7 +182,7 @@
 
       <tr>
         <td><label for="cell">Aadhar Number : </label></td>
-        <td><input type="text" id="aadharNumber" name="aadharNumber" maxlength="12"  [(ngModel)]="account.customer_id.aadharNumber" size="40" placeholder="000000000000" value="" (change)="onAadharNumberChange($event)">
+        <td><input type="text" id="aadharNumber" name="aadharNumber" maxlength="12"  (click)="aadharNumberReq=false" [(ngModel)]="account.customer_id.aadharNumber" size="40" placeholder="000000000000" value="" (change)="onAadharNumberChange($event)">
         </td>
 
       </tr>
@@ -202,7 +202,7 @@
 
       <tr>
         <td><label for="cell">Pan Number : </label></td>
-        <td><input type="text" id=" panCardNumber" name="panCardNumber" maxlength="10" placeholder="XXXXX0000X" (change)="onPanNumberChange($event)" [(ngModel)]="account.customer_id.panCardNumber" size="40" >
+        <td><input type="text" id=" panCardNumber" name="panCardNumber" maxlength="10" (click)="panNumberReq=false" placeholder="XXXXX0000X" (change)="onPanNumberChange($event)" [(ngModel)]="account.customer_id.panCardNumber" size="40" >
         </td>
 
       </tr>

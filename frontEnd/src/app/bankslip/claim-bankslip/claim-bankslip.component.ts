@@ -23,7 +23,7 @@ export class ClaimBankslipComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.accounts=JSON.parse(sessionStorage.getItem("accounts")|| '{}')
+    this.accounts=JSON.parse(localStorage.getItem("accounts")|| '{}')
 
   }
   reloadBankSlip() {

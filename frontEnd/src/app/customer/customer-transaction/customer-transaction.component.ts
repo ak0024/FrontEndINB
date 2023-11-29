@@ -19,7 +19,7 @@ export class CustomerTransactionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.accounts = JSON.parse(sessionStorage.getItem('accounts') || '{}');
+    this.accounts = JSON.parse(localStorage.getItem('accounts') || '{}');
   }
   reloadtransaction() {
     this.transactionservice.transaction(this.accountId).subscribe((data) => {

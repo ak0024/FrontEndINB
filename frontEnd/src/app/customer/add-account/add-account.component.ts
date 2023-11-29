@@ -13,7 +13,7 @@ export class AddAccountComponent implements OnInit {
   customer: Customer = new Customer();
   account: Account = new Account();
   ngOnInit(): void {
-    this.customer = JSON.parse(sessionStorage.getItem('customer') || '{}');
+    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
   }
   constructor(private customerServicesService: CustomerServicesService) {}
 

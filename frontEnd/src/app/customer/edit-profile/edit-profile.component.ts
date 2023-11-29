@@ -38,7 +38,7 @@ export class EditProfileComponent implements OnInit{
 
   ngOnInit(): void {
     this.customerId = this.activatedRouter.snapshot.params['customerId'];
-    this.customer=JSON.parse(sessionStorage.getItem("customer")||'{}')
+    this.customer=JSON.parse(localStorage.getItem("customer")||'{}')
     
     
   }
@@ -52,7 +52,7 @@ export class EditProfileComponent implements OnInit{
           alert('Profile updated successfully!');
         }, 200);
         this.customer=data
-        sessionStorage.setItem("customer",JSON.stringify(data))
+        localStorage.setItem("customer",JSON.stringify(data))
       }
     );
     

@@ -19,15 +19,15 @@ export class CustomerViewComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.customer = JSON.parse(sessionStorage.getItem('customer') || '{}');
+    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
     this.customerservice
       .getAccountByCustomerId(this.customer.customerId)
       .subscribe((data) => {
         this.accounts = data;
         console.log(this.accounts);
-        sessionStorage.setItem('accounts', JSON.stringify(data));
+        localStorage.setItem('accounts', JSON.stringify(data));
       });
-    this.accounts = JSON.parse(sessionStorage.getItem("accounts") || '{}')
+    this.accounts = JSON.parse(localStorage.getItem("accounts") || '{}')
     console.log(this.accounts)
 
   }

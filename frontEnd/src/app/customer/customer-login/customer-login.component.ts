@@ -20,8 +20,8 @@ export class CustomerLoginComponent {
       console.log(data);
       this.customerLogin = data;
       if (this.customerLogin.message == 'Login Success') {
-        sessionStorage.setItem("customerLoggedIn","true")
-        sessionStorage.setItem('customer', JSON.stringify(this.customerLogin.customer));
+        localStorage.setItem("customerLoggedIn","true")
+        localStorage.setItem('customer', JSON.stringify(this.customerLogin.customer));
         this.router.navigate(['customerHome']);
       } else this.router.navigate(['']);
     });

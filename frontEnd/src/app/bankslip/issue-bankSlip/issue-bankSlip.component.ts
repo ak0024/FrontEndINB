@@ -25,7 +25,7 @@ export class IssueBankSlipComponent implements OnInit {
   amountReq: boolean = false;
 
   ngOnInit() {
-    this.accounts = JSON.parse(sessionStorage.getItem('accounts') || '{}');
+    this.accounts = JSON.parse(localStorage.getItem('accounts') || '{}');
   }
   onaccountChange(event: Event) {
     this.accountid = (event.target as HTMLSelectElement).value;

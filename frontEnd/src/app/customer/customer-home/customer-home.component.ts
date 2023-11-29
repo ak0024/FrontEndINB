@@ -23,8 +23,8 @@ export class CustomerHomeComponent implements OnInit {
 
   ngOnInit() {
     if (
-      !sessionStorage.getItem('customerLoggedIn') ||
-      sessionStorage.getItem('customerLoggedIn') === 'false'
+      !localStorage.getItem('customerLoggedIn') ||
+      localStorage.getItem('customerLoggedIn') === 'false'
     ) {
       Swal.fire({
         position: 'center',
@@ -34,13 +34,13 @@ export class CustomerHomeComponent implements OnInit {
       });
       this.router.navigate(['']);
     }
-    this.customer = JSON.parse(sessionStorage.getItem('customer') || '{}');
+    this.customer = JSON.parse(localStorage.getItem('customer') || '{}');
     this.customerservice
       .getAccountByCustomerId(this.customer.customerId)
       .subscribe((data) => {
         this.accounts = data;
         console.log(this.accounts);
-        sessionStorage.setItem('accounts', JSON.stringify(data));
+        localStorage.setItem('accounts', JSON.stringify(data));
       });
   }
 
@@ -49,7 +49,7 @@ export class CustomerHomeComponent implements OnInit {
   }
 
   logOut() {
-    sessionStorage.setItem('customerLoggedIn', 'false');
+    localStorage.setItem('customerLoggedIn', 'false');
     this.router.navigate(['']);
   }
 }

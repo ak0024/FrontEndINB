@@ -11,16 +11,16 @@
 </tr>
 <tr *ngFor="let bankslip of bankslips">
     <td>{{bankslip.chequeno}}</td>
-    <td>{{bankslip.accountid.account_id}}</td>
-    <td>{{bankslip.slipdate}}</td>
     <td>{{bankslip.payeraccountid.account_id}}</td>
+    <td>{{bankslip.slipdate}}</td>
+    <td>{{bankslip.accountid.account_id}}</td>
     <td >{{bankslip.chequedate}}</td>
     <td>{{bankslip.amount}}</td>
-    <td>{{bankslip.payeraccountid.current_balance}}</td>
+    <td>{{bankslip.accountid.current_balance}}</td>
       <td>
-          <button style="background-color: green;" (click)="acceptBankslip(bankslip)" *ngIf="bankslip.payeraccountid.current_balance>=bankslip.amount && isNextThreeMonthsBeforeToday(bankslip.chequedate) ">Accept</button>
+          <button style="background-color: green;" (click)="acceptBankslip(bankslip)" *ngIf="bankslip.accountid.current_balance>=bankslip.amount && isNextThreeMonthsBeforeToday(bankslip.chequedate) ">Accept</button>
           <button style="background-color: red;" (click)="rejectBankslip(bankslip)" *ngIf="!isNextThreeMonthsBeforeToday(bankslip.chequedate)">Reject</button>
-          <button style="background-color: orange;" (click)="bounceBankslip(bankslip)" *ngIf="bankslip.payeraccountid.current_balance<bankslip.amount">Bounce</button>
+          <button style="background-color: orange;" (click)="bounceBankslip(bankslip)" *ngIf="bankslip.accountid.current_balance<bankslip.amount">Bounce</button>
       </td>
   </tr>
 </table>

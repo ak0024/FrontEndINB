@@ -278,7 +278,7 @@ export class CustomerRegistrationComponent implements OnInit {
             accNumber: data[2],
           };
           const jsonString = JSON.stringify(jsonObject);
-          sessionStorage.setItem('SuccessDetails', jsonString);
+          localStorage.setItem('SuccessDetails', jsonString);
           this.router.navigateByUrl('registrationWaiting', {
             state: jsonObject,
           });
